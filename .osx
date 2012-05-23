@@ -92,6 +92,15 @@ defaults write com.apple.dock use-new-list-stack -bool YES
 # Set the icon size of Dock items to 36 pixels
 defaults write com.apple.dock tilesize -int 36
 
+# Turn on magnification
+defaults write com.apple.dock magnification -bool true
+
+# Disable spaces switching automatically
+defaults write com.apple.Dock workspaces-auto-swoosh -bool false
+
+# Set size of magnified icons
+defaults write com.apple.dock largesize -int 90
+
 # Enable spring loading for all Dock items
 defaults write com.apple.dock enable-spring-load-actions-on-all-items -bool true
 
@@ -103,6 +112,9 @@ defaults write com.apple.dock autohide -bool true
 
 # Make Dock icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool true
+
+# Minimize icons into the Dock.
+defaults write com.apple.dock minimize-to-application -bool true
 
 # Enable Safari’s debug menu
 defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
