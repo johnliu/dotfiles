@@ -6,13 +6,13 @@ import os
 ignored_files = ['.git', '.gitignore', 'README.md', 'setup']
 
 def main():
-  home = os.environ['HOME']
-  cwd = os.getcwd() 
-  src = os.listdir(cwd)
-  dst = os.listdir(home)
+  dstDir = os.environ['HOME']
+  srcDir = os.getcwd() 
+  src = os.listdir(srcDir)
+  dst = os.listdir(dstDir)
 
-  print "Home Directory: " + home
-  print "Current Directory: " + cwd
+  print "Source: " + srcDir
+  print "Destination: " + dstDir
 
   for file in src:
     if file not in ignored_files:
@@ -20,10 +20,10 @@ def main():
       # Delete the file if it's already in the destination to overwrite.
       if file in dst:
         print "Removing old copy of: " + file
-        os.remove(home + '/' + file)
+        os.remove(dstDir + '/' + file)
 
       print "Creating symlink of file: " + file
-      os.symlink(cwd + '/' + file, home + '/' + file)
+      os.symlink(srcDir + '/' + file, dstDir + '/' + file)
 
   return
 

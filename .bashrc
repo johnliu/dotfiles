@@ -1,4 +1,6 @@
-# Default Path
+
+# DEFAULT PATH
+# ============
 export PATH=~/Projects/bin:$PATH
 
 
@@ -85,3 +87,9 @@ On_IWhite='\e[0;107m'   # White
 # -----------
 PS1="\[$White\]@\u \[$UGreen\]\W\[$Color_Off\] \[$White\]\$\[$Color_Off\] "
 
+# BASH ALIASES
+# ============
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
