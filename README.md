@@ -1,9 +1,6 @@
 dotfiles
 ========
 
-Configuration Files
+General environment configuration files.
 
-TODO
-----
--   Make changes to .vimrc
-
+To install run `./setup`, this creates a symlink of all the files from the git repository to the home folder.

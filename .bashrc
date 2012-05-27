@@ -93,3 +93,16 @@ PS1="\[$White\]@\u \[$UGreen\]\W\[$Color_Off\] \[$White\]\$\[$Color_Off\] "
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
+
+# MISC
+# ====
+
+# Case-insensitive globbing (used in pathname expansion)
+shopt -s nocaseglob
+
+# Append to Bash history instead of overwriting it
+shopt -s histappend
+
+# Autocorrect typos in path names when using 'cd'
+shopt -s cdspell
+
