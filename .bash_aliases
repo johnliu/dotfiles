@@ -12,6 +12,9 @@ alias g="git"
 alias v="vim"
 alias s="subl ."
 
+# Activate the virtualenv of this project.
+alias venv="source venv/bin/activate"
+
 # Always use color output for `ls`
 if [[ "$OSTYPE" =~ ^darwin ]]; then
 	alias ls="command ls -G"
