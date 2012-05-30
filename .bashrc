@@ -85,7 +85,7 @@ On_IWhite='\e[0;107m'   # White
 
 # PROMPT CODE
 # -----------
-PS1="\[$White\]@\u \[$UGreen\]\W\[$Color_Off\] \[$White\]\$\[$Color_Off\] "
+PS1="\[\033[G\]\[$White\]@\u \[$UGreen\]\W\[$Color_Off\] \[$White\]\$\[$Color_Off\] "
 
 # BASH ALIASES
 # ============
