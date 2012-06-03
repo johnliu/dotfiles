@@ -29,3 +29,6 @@ alias sudo="sudo "
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.Finder AppleShowAllFiles -bool true && killall Finder"
 alias hide="defaults write com.apple.Finder AppleShowAllFiles -bool false && killall Finder"
+
+# Do not commit this:
+alias unlock="unlock &> /dev/null"
