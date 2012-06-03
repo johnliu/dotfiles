@@ -24,6 +24,9 @@ map <leader>e :e! ~/.vimrc<cr>
 autocmd! bufwritepost vimrc source ~/.vimrc
 
 " VIM UI
+" Add mouse scrolling.
+set mouse=a
+
 " Start scrolling 7 lines before the top/bottom
 set so=7
 
