@@ -1,8 +1,7 @@
 
 # DEFAULT PATH
 # ============
-export PATH=~/Projects/bin:$PATH
-
+export PATH=~/Projects/bin:/usr/local/bin:$PATH
 
 # SHELL PROMPT
 # ============
@@ -85,7 +84,14 @@ On_IWhite='\e[0;107m'   # White
 
 # PROMPT CODE
 # -----------
-PS1="\[$White\]@\u \[$UGreen\]\W\[$Color_Off\] \[$White\]\$\[$Color_Off\] "
+case $TERM in
+  xterm*)
+    PS1="\[\033]0;\W\007\]\[$White\]@\u \[$UGreen\]\W\[$Color_Off\] \[$White\]\$\[$Color_Off\] "
+    ;;
+  *)
+    PS1="\[$White\]@\u \[$UGreen\]\W\[$Color_Off\] \[$White\]\$\[$Color_Off\] "
+    ;;
+esac
 
 # BASH ALIASES
 # ============
