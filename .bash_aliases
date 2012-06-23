@@ -11,9 +11,15 @@ alias p="cd ~/Projects/"
 alias g="git"
 alias v="vim"
 alias s="subl ."
+alias h="history"
+alias j="jobs"
 
 # Activate the virtualenv of this project.
 alias venv="source venv/bin/activate"
+
+# File listings
+alias l="ls -Gl"
+alias l="ls -Gla"
 
 # Always use color output for `ls`
 if [[ "$OSTYPE" =~ ^darwin ]]; then
@@ -25,6 +31,12 @@ fi
 
 # Enable aliases to be sudo'ed.
 alias sudo="sudo "
+
+# OS X software updates and brew updates
+alias update="sudo softwareupdate -i -a; brew update; brew upgrade"
+
+# File size
+alias fs="stat -f \"%z bytes\""
 
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.Finder AppleShowAllFiles -bool true && killall Finder"

@@ -85,7 +85,7 @@ catch
 endtry
 
 set number
-set background=dark
+"set background=dark
 
 " solarized options
 let g:solarized_termtrans = 1
