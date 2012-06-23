@@ -19,7 +19,7 @@ alias venv="source venv/bin/activate"
 
 # File listings
 alias l="ls -Gl"
-alias l="ls -Gla"
+alias la="ls -Gla"
 
 # Always use color output for `ls`
 if [[ "$OSTYPE" =~ ^darwin ]]; then
