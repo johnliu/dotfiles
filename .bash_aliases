@@ -18,8 +18,10 @@ alias j="jobs"
 alias venv="source venv/bin/activate"
 
 # File listings
+shopt -s extglob
 alias l="ls -Gl"
 alias la="ls -Gla"
+alias ll="ls -Gd !(*.pyc)"
 
 # Always use color output for `ls`
 if [[ "$OSTYPE" =~ ^darwin ]]; then
@@ -35,6 +37,18 @@ alias sudo="sudo "
 # OS X software updates and brew updates
 alias update="sudo softwareupdate -i -a; brew update; brew upgrade"
 
+# IP addresses
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en1"
+alias ips="ifconfig -a | grep -o 'inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet6* //'"
+
+# Enhanced WHOIS lookups
+alias whois="whois -h whois-servers.net"
+
+# View HTTP traffic
+alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
+alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
+
 # File size
 alias fs="stat -f \"%z bytes\""
 
@@ -42,5 +56,8 @@ alias fs="stat -f \"%z bytes\""
 alias show="defaults write com.apple.Finder AppleShowAllFiles -bool true && killall Finder"
 alias hide="defaults write com.apple.Finder AppleShowAllFiles -bool false && killall Finder"
 
-# Do not commit this:
-alias unlock="unlock &> /dev/null"
+# HTTP Requests
+for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
+  alias "$method"="lwp-request -m '$method'"
+done
+

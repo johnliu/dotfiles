@@ -23,6 +23,9 @@ map <leader>e :e! ~/.vimrc<cr>
 " When vimrc is edited, reload it
 autocmd! bufwritepost vimrc source ~/.vimrc
 
+" Speed up <SHIFT> 0
+set timeout timeoutlen=5000 ttimeoutlen=100
+
 " VIM UI
 " Add mouse scrolling.
 set mouse=a
