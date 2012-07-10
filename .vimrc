@@ -171,6 +171,7 @@ set ai
 
 " Smart indent
 set si
+au! FileType python setl nosmartindent 
 
 " Wrap lines
 set wrap
