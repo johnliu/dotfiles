@@ -17,6 +17,9 @@ Bundle 'YankRing.vim'
 Bundle 'sjl/gundo.vim'
 Bundle 'scrooloose/nerdtree'
 
+" Gundo configurations:
+nnoremap <F5> :GundoToggle<cr>
+
 " GENERAL
 " Sets how many lines VIM has to remember.
 set history=700
