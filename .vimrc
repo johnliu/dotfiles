@@ -1,3 +1,22 @@
+" BUNDLES
+" Be iMproved required
+set nocompatible
+filetype on
+filetype off
+
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+" My bundles:
+Bundle 'SuperTab'
+Bundle 'ack.vim'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'YankRing.vim'
+Bundle 'sjl/gundo.vim'
+Bundle 'scrooloose/nerdtree'
+
 " GENERAL
 " Sets how many lines VIM has to remember.
 set history=700
@@ -5,6 +24,15 @@ set history=700
 " Enable filetype plugin
 filetype plugin on
 filetype indent on
+
+" Modelines security exploits
+set modelines=0
+
+" Show line with cursor
+set cursorline
+
+" Fast terminal
+set ttyfast
 
 " Set to auto read when a file is changed from the outside
 set autoread
@@ -35,6 +63,7 @@ set so=7
 
 " Turn on WiLd menu
 set wildmenu
+set wildmode=list:longest
 
 " Always show current position
 set ruler
@@ -58,6 +87,16 @@ set hlsearch
 
 " Make search act like in modern browsers
 set incsearch
+
+" Fix broken regex in modern browsers
+nnoremap / /\v
+vnoremap / /\v
+
+" Default global substitution
+set gdefault
+
+" Clear highlighting.
+nnoremap <leader><space> :noh<cr>
 
 " Do not redraw when executing macros
 set nolazyredraw
@@ -114,10 +153,15 @@ endtry
 set expandtab
 set shiftwidth=2
 set tabstop=2
+set softtabstop=2
 set smarttab
 
 set lbr
 set tw=500
+set colorcolumn=85
+
+" Format options
+set formatoptions=qrn1
 
 " Auto indent
 set ai
@@ -178,4 +222,22 @@ func! DeleteTrailingWS()
   exe "normal `z"
 endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
+
+" Disable arrow keys
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+
+" Don't need shift for commands.
+nnoremap ; :
+vnoremap ; :
+
+" Leader to reselect pasted
+nnoremap <leader>v V`]
+
 
