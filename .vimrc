@@ -20,6 +20,9 @@ Bundle 'scrooloose/nerdtree'
 " Gundo configurations:
 nnoremap <F5> :GundoToggle<cr>
 
+" Yankring configurations:
+let g:yankring_history_file = '.yankring_history'
+
 " GENERAL
 " Sets how many lines VIM has to remember.
 set history=700
