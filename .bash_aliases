@@ -1,16 +1,16 @@
 # DIRECTORY CHANGES
 # =================
 
+# Alias functions
+alias todos="grep -rn --color --exclude=activate 'TODO(johnliu)' ."
+
 # Easier navigation
 alias ..="cd .."
 alias ...="cd ../.."
 alias -- -="cd -"
 
 # Shortcuts
-alias p="cd ~/Projects/"
-alias g="git"
 alias v="vim"
-alias s="subl ."
 alias h="history"
 alias j="jobs"
 
@@ -19,9 +19,9 @@ alias venv="source venv/bin/activate"
 
 # File listings
 shopt -s extglob
-alias l="ls -Gl"
+alias ll="ls -Gl"
 alias la="ls -Gla"
-alias ll="ls -Gd !(*.pyc)"
+alias lx="ls -Gd !(*.pyc)"
 
 # Always use color output for `ls`
 if [[ "$OSTYPE" =~ ^darwin ]]; then

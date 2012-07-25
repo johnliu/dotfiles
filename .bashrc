@@ -101,6 +101,13 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# BASHMARKS
+# =========
+
+if [ -f ~/Projects/bin/bashmarks.sh ]; then
+  . ~/Projects/bin/bashmarks.sh
+fi
+
 # MISC
 # ====
 

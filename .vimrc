@@ -16,6 +16,9 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'YankRing.vim'
 Bundle 'sjl/gundo.vim'
 Bundle 'scrooloose/nerdtree'
+Bundle 'groenewege/vim-less'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'klen/rope-vim'
 
 " Gundo configurations:
 nnoremap <F5> :GundoToggle<cr>
