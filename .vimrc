@@ -19,7 +19,7 @@ Bundle 'sjl/gundo.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'groenewege/vim-less'
 Bundle 'kchmck/vim-coffee-script'
-Bundle 'statianzo/vim-jade'
+Bundle 'digitaltoad/vim-jade'
 
 " Gundo configurations:
 nnoremap <F5> :GundoToggle<cr>

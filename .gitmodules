@@ -30,4 +30,4 @@
 	url = https://github.com/kchmck/vim-coffee-script.git
 [submodule ".vim/bundle/vim-jade"]
 	path = .vim/bundle/vim-jade
-	url = https://github.com/statianzo/vim-jade.git
+	url = https://github.com/digitaltoad/vim-jade.git
