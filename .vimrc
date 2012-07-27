@@ -12,12 +12,14 @@ Bundle 'gmarik/vundle'
 " My bundles:
 Bundle 'SuperTab'
 Bundle 'ack.vim'
+Bundle 'othree/html5.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'YankRing.vim'
 Bundle 'sjl/gundo.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'groenewege/vim-less'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'statianzo/vim-jade'
 
 " Gundo configurations:
 nnoremap <F5> :GundoToggle<cr>
