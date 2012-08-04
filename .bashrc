@@ -2,7 +2,7 @@
 # DEFAULT PATH
 # ============
 export PATH=~/Projects/bin:/usr/local/bin:$PATH
-export NODE_PATH='~/usr/local/lib/node'
+export NODE_PATH='/usr/local/lib/node'
 
 # SHELL PROMPT
 # ============
