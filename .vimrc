@@ -12,6 +12,7 @@ Bundle 'gmarik/vundle'
 " My bundles:
 Bundle 'SuperTab'
 Bundle 'ack.vim'
+Bundle 'Command-T'
 Bundle 'othree/html5.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'YankRing.vim'

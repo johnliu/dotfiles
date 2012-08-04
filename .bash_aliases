@@ -10,6 +10,7 @@ alias ...="cd ../.."
 alias -- -="cd -"
 
 # Shortcuts
+alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
 alias v="vim"
 alias h="history"
 alias j="jobs"
