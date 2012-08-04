@@ -28,6 +28,9 @@ nnoremap <F5> :GundoToggle<cr>
 " Yankring configurations:
 let g:yankring_history_file = '.yankring_history'
 
+" Command-T configurations
+set wildignore=*.pyc,*.o,.git,node_modules,venv
+
 " GENERAL
 " Sets how many lines VIM has to remember.
 set history=700
