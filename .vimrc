@@ -22,6 +22,11 @@ Bundle 'groenewege/vim-less'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'digitaltoad/vim-jade'
 
+" With a map leader it's possible to do extra key combinations
+" like <leader>w saves the current file
+let mapleader = ","
+let g:mapleader = ","
+
 " Gundo configurations:
 nnoremap <F5> :GundoToggle<cr>
 
@@ -30,6 +35,10 @@ let g:yankring_history_file = '.yankring_history'
 
 " Command-T configurations
 set wildignore=*.pyc,*.o,.git,node_modules,venv
+
+" NerdTree configurations
+nnoremap <silent> <leader>n :NERDTreeToggle<cr>
+
 
 " GENERAL
 " Sets how many lines VIM has to remember.
@@ -50,11 +59,6 @@ set ttyfast
 
 " Set to auto read when a file is changed from the outside
 set autoread
-
-" With a map leader it's possible to do extra key combinations
-" like <leader>w saves the current file
-let mapleader = ","
-let g:mapleader = ","
 
 " Fast saving
 nmap <leader>w :w!<cr>
