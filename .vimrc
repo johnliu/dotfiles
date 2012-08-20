@@ -46,6 +46,8 @@ nnoremap <silent> <leader>n :NERDTreeToggle<cr>
 " TagBar configurations
 nnoremap <silent> <leader>m :TagbarToggle<cr>
 
+" Syntastic configurations
+let g:syntastic_quiet_warnings = 1
 
 " GENERAL
 " Sets how many lines VIM has to remember.
