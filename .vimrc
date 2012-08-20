@@ -12,7 +12,6 @@ Bundle 'gmarik/vundle'
 " My bundles:
 Bundle 'SuperTab'
 Bundle 'ack.vim'
-Bundle 'Command-T'
 Bundle 'othree/html5.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'YankRing.vim'
@@ -21,6 +20,9 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'groenewege/vim-less'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'digitaltoad/vim-jade'
+Bundle 'scrooloose/syntastic'
+Bundle 'majutsushi/tagbar'
+Bundle 'kien/ctrlp.vim'
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
@@ -33,11 +35,16 @@ nnoremap <F5> :GundoToggle<cr>
 " Yankring configurations:
 let g:yankring_history_file = '.yankring_history'
 
-" Command-T configurations
+" CtrlP configurations
 set wildignore=*.pyc,*.o,.git,node_modules,venv
+let g:ctrlp_map = '<leader>t'
+let g:ctrlp_cmd = 'CtrlP'
 
 " NerdTree configurations
 nnoremap <silent> <leader>n :NERDTreeToggle<cr>
+
+" TagBar configurations
+nnoremap <silent> <leader>m :TagbarToggle<cr>
 
 
 " GENERAL
