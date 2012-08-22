@@ -3,6 +3,7 @@
 # ============
 export PATH=~/Projects/bin:/usr/local/bin:$PATH
 export NODE_PATH='/usr/local/lib/node'
+export PATH=$PATH:$HOME/.rvm/bin
 
 # SHELL PROMPT
 # ============
@@ -107,6 +108,10 @@ fi
 if [ -f ~/Projects/bin/bashmarks.sh ]; then
   . ~/Projects/bin/bashmarks.sh
 fi
+
+# RVM
+# ===
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . $HOME/.rvm/scripts/rvm
 
 # MISC
 # ====
