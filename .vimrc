@@ -23,6 +23,7 @@ Bundle 'digitaltoad/vim-jade'
 Bundle 'scrooloose/syntastic'
 Bundle 'majutsushi/tagbar'
 Bundle 'kien/ctrlp.vim'
+Bundle 'vim-stylus'
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
