@@ -3,7 +3,7 @@
 import os
 
 # List of files to be ignored by the script.
-ignored_files = ['.git', '.gitignore', 'README.md', 'setup']
+ignored_files = ['.git', 'README.md', 'setup']
 
 def main():
   dstDir = os.environ['HOME']
