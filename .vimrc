@@ -25,6 +25,11 @@ Bundle 'majutsushi/tagbar'
 Bundle 'kien/ctrlp.vim'
 Bundle 'vim-stylus'
 Bundle 'tpope/vim-surround'
+Bundle 'AutoComplPop'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+Bundle 'honza/snipmate-snippets'
+Bundle 'garbas/vim-snipmate'
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
