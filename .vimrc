@@ -193,7 +193,7 @@ set smarttab
 
 set lbr
 set tw=500
-set colorcolumn=85
+set colorcolumn=100
 
 " Format options
 set formatoptions=qrn1
