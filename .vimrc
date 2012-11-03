@@ -10,7 +10,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " My bundles:
-Bundle 'SuperTab'
+Bundle 'ervandew/supertab'
 Bundle 'ack.vim'
 Bundle 'othree/html5.vim'
 Bundle 'scrooloose/nerdcommenter'
@@ -26,10 +26,10 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'vim-stylus'
 Bundle 'tpope/vim-surround'
 Bundle 'AutoComplPop'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
-Bundle 'honza/snipmate-snippets'
-Bundle 'garbas/vim-snipmate'
+"Bundle 'MarcWeber/vim-addon-mw-utils'
+"Bundle 'tomtom/tlib_vim'
+"Bundle 'honza/snipmate-snippets'
+"Bundle 'garbas/vim-snipmate'
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
@@ -56,6 +56,17 @@ nnoremap <silent> <leader>m :TagbarToggle<cr>
 " Syntastic configurations
 let g:syntastic_quiet_warnings = 1
 let g:syntastic_check_on_open = 1
+
+" SuperTab configurations
+function! TabSelect()
+  if pumvisible()
+    return "\<cr>"
+  else
+    return "\<tab>"
+endfunction
+
+inoremap <tab> <C-R>=TabSelect()<CR>
+
 
 " GENERAL
 " Sets how many lines VIM has to remember.
@@ -96,7 +107,7 @@ set mouse=a
 " Start scrolling 7 lines before the top/bottom
 set so=7
 
-" Turn on WiLd menu
+" Turn on Wild menu
 set wildmenu
 set wildmode=list:longest
 
