@@ -58,15 +58,10 @@ let g:syntastic_quiet_warnings = 1
 let g:syntastic_check_on_open = 1
 
 " SuperTab configurations
-function! TabSelect()
-  if pumvisible()
-    return "\<cr>"
-  else
-    return "\<tab>"
-endfunction
+let g:SuperTabMappingForward = '<c-k>'
+let g:SuperTabMappingBackward = '<c-j>'
 
-inoremap <tab> <C-R>=TabSelect()<CR>
-
+inoremap <expr> <tab> pumvisible() ? "\<cr>" : "\<tab>"
 
 " GENERAL
 " Sets how many lines VIM has to remember.
