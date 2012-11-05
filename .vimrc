@@ -10,7 +10,6 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " My bundles:
-Bundle 'ervandew/supertab'
 Bundle 'ack.vim'
 Bundle 'othree/html5.vim'
 Bundle 'scrooloose/nerdcommenter'
@@ -25,11 +24,12 @@ Bundle 'majutsushi/tagbar'
 Bundle 'kien/ctrlp.vim'
 Bundle 'vim-stylus'
 Bundle 'tpope/vim-surround'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+Bundle 'honza/snipmate-snippets'
+Bundle 'garbas/vim-snipmate'
+Bundle 'ervandew/supertab'
 Bundle 'AutoComplPop'
-"Bundle 'MarcWeber/vim-addon-mw-utils'
-"Bundle 'tomtom/tlib_vim'
-"Bundle 'honza/snipmate-snippets'
-"Bundle 'garbas/vim-snipmate'
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
@@ -62,6 +62,11 @@ let g:SuperTabMappingForward = '<c-k>'
 let g:SuperTabMappingBackward = '<c-j>'
 
 inoremap <expr> <tab> pumvisible() ? "\<cr>" : "\<tab>"
+
+" SnipMate configurations
+let g:snips_trigger_key = '<s-tab>'
+let g:snips_trigger_key_backwards = '<s-c-tab>'
+
 
 " GENERAL
 " Sets how many lines VIM has to remember.
