@@ -30,6 +30,7 @@ Bundle 'honza/snipmate-snippets'
 Bundle 'garbas/vim-snipmate'
 Bundle 'ervandew/supertab'
 Bundle 'AutoComplPop'
+Bundle 'fholgado/minibufexpl.vim'
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
@@ -273,8 +274,8 @@ autocmd BufWrite *.py :call DeleteTrailingWS()
 " Disable arrow keys
 nnoremap <up> <nop>
 nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
+nnoremap <left> :bp<cr>
+nnoremap <right> :bn<cr>
 "inoremap <up> <nop>
 "inoremap <down> <nop>
 "inoremap <left> <nop>
