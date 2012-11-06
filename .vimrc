@@ -31,6 +31,7 @@ Bundle 'garbas/vim-snipmate'
 Bundle 'ervandew/supertab'
 Bundle 'AutoComplPop'
 Bundle 'fholgado/minibufexpl.vim'
+Bundle 'Raimondi/delimitMate'
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
