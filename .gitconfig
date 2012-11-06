@@ -18,12 +18,13 @@
   untracked = cyan
 
 [user]
-	name = John Liu
+  name = John Liu
   email = johnyuhanliu@gmail.com
 
 [alias]
   pullr = pull --rebase
   lol = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   list = show --pretty="format:" --name-only
+
 [core]
-	excludesfile = /Users/johnliu/.gitignore
+  excludesfile = /Users/johnliu/.gitignore
