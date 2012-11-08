@@ -28,3 +28,4 @@
 
 [core]
   excludesfile = /Users/johnliu/.gitignore
+	editor = /usr/bin/vim
