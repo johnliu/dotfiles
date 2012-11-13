@@ -177,6 +177,9 @@ endtry
 set number
 "set background=dark
 
+" Differentiate tabs, spaces, and other whitespace characters.
+set listchars=eol:$,tab:->,trail:~
+
 " solarized options
 let g:solarized_termtrans = 1
 let g:solarized_termcolors = 256
@@ -294,3 +297,6 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+" Leader to toggle list chars
+nnoremap <leader>l :set list!<cr>
