@@ -4,6 +4,9 @@
 "\e[1;5D": backward-word
 "\e[1;5C": forward-word
 
+# Turn on vi editing mode.
+set editing-mode vi
+
 # Make Tab autocomplete regardless of filename case
 set completion-ignore-case on
         
