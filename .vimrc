@@ -15,6 +15,7 @@ Bundle 'othree/html5.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'YankRing.vim'
 Bundle 'sjl/gundo.vim'
+Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/nerdtree'
 Bundle 'groenewege/vim-less'
 Bundle 'kchmck/vim-coffee-script'
@@ -32,6 +33,8 @@ Bundle 'ervandew/supertab'
 Bundle 'AutoComplPop'
 Bundle 'fholgado/minibufexpl.vim'
 Bundle 'Raimondi/delimitMate'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'klen/python-mode'
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
@@ -97,10 +100,14 @@ nmap <leader>w :w!<cr>
 map <leader>e :e! ~/.vimrc<cr>
 
 " When vimrc is edited, reload it
-autocmd! bufwritepost vimrc source ~/.vimrc
+autocmd! bufwritepost .vimrc source ~/.vimrc
 
 " Speed up <SHIFT> 0
 set timeout timeoutlen=5000 ttimeoutlen=100
+
+" Better Copy and Paste
+set pastetoggle=<F2>
+set clipboard=unnamed
 
 " VIM UI
 " Add mouse scrolling.
@@ -187,6 +194,7 @@ let g:solarized_constrast = "normal"
 let g:solarized_visibility = "normal"
 colorscheme solarized
 
+
 " FILES, BACKUPS AND UNDOS
 " Turn backup off (mostly using git, etc anyway)
 set nobackup
@@ -208,8 +216,11 @@ set softtabstop=2
 set smarttab
 
 set lbr
-set tw=500
+set tw=0
 set colorcolumn=100
+set nowrap
+set fo-=t
+"highlight ColorColumn ctermbg=233
 
 " Format options
 set formatoptions=qrn1
@@ -223,6 +234,10 @@ au! FileType python setl nosmartindent
 
 " Wrap lines
 set wrap
+
+" Reselect visual block after indent/outdent
+vnoremap < <gv
+vnoremap > >gv
 
 " VISUAL MODE
 " Press * or # to search the current selection.
@@ -300,3 +315,4 @@ nnoremap <C-l> <C-w>l
 
 " Leader to toggle list chars
 nnoremap <leader>l :set list!<cr>
+
