@@ -116,6 +116,11 @@ fi
 # Z
 . `brew --prefix`/etc/profile.d/z.sh
 
+# BASH COMPLETION
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+
 # MISC
 # ====
 
