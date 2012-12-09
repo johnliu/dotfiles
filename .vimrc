@@ -216,7 +216,7 @@ catch
 endtry
 
 " Autosave buffers on lose focus
-:au FocusLost * silent! wa
+autocmd BufLeave,FocusLost * silent! wall
 
 
 " TEXT, TAB AND INDENT RELATED
