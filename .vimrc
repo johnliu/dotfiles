@@ -320,6 +320,12 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" Fix saving issues.
+:ca WQ wq
+:ca Wq wq
+:ca W w
+:ca Q q
+
 " Leader to toggle list chars
 nnoremap <leader>l :set list!<cr>
 
