@@ -113,6 +113,9 @@ fi
 # ===
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . $HOME/.rvm/scripts/rvm
 
+# Z
+. `brew --prefix`/etc/profile.d/z.sh
+
 # MISC
 # ====
 
