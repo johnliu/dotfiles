@@ -215,6 +215,10 @@ try
 catch
 endtry
 
+" Autosave buffers on lose focus
+:au FocusLost * silent! wa
+
+
 " TEXT, TAB AND INDENT RELATED
 set expandtab
 set shiftwidth=2

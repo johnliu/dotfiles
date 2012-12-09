@@ -40,8 +40,11 @@ source $ZSH/oh-my-zsh.sh
 # Agnoster Theme:
 export DEFAULT_USER=johnliu
 
-# Vi Editing Mode
+# vi Editing Mode
 bindkey -v
+
+# Z tool.
+. `brew --prefix`/etc/profile.d/z.sh
 
 # Customize to your needs...
 export PATH=/Users/johnliu/.rvm/gems/ruby-1.9.2-p320/bin:/Users/johnliu/.rvm/gems/ruby-1.9.2-p320@global/bin:/Users/johnliu/.rvm/rubies/ruby-1.9.2-p320/bin:/Users/johnliu/.rvm/bin:/Users/johnliu/Projects/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/johnliu/.rvm/bin
