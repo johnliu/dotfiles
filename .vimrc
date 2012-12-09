@@ -73,6 +73,10 @@ let g:snips_trigger_key = '<s-tab>'
 let g:snips_trigger_key_backwards = '<s-c-tab>'
 
 
+" Powerline configurations
+let g:Powerline_symbols = 'fancy'
+
+
 " GENERAL
 " Sets how many lines VIM has to remember.
 set history=700
