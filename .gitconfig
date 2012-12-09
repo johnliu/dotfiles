@@ -28,4 +28,6 @@
 
 [core]
   excludesfile = /Users/johnliu/.gitignore
-	editor = /usr/bin/vim
+  editor = /usr/bin/vim
+[push]
+  default = matching
