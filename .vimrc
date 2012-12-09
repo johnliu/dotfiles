@@ -99,6 +99,9 @@ nmap <leader>w :w!<cr>
 " Fast editing of the .vimrc
 map <leader>e :e! ~/.vimrc<cr>
 
+" Force saving of read only files.
+cmap w!! %!sudo tee > /dev/null %
+
 " When vimrc is edited, reload it
 autocmd! bufwritepost .vimrc source ~/.vimrc
 
