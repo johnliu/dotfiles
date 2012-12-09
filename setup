@@ -3,11 +3,12 @@
 import os
 
 # List of files to be ignored by the script.
-ignored_files = ['.git', 'README.md', 'setup']
+ignored_files = ['.git', 'README.md', 'setup', '.gitmodules']
+
 
 def main():
   dstDir = os.environ['HOME']
-  srcDir = os.getcwd() 
+  srcDir = os.getcwd()
   src = os.listdir(srcDir)
   dst = os.listdir(dstDir)
 
@@ -16,7 +17,7 @@ def main():
 
   for file in src:
     if file not in ignored_files:
-      
+
       # Delete the file if it's already in the destination to overwrite.
       if file in dst:
         print "Removing old copy of: " + file
