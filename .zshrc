@@ -32,16 +32,16 @@ eval `gdircolors ~/.dircolors`
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git zsh-syntax-highlighting)
+plugins=(brew coffee compleat encode64 git gnu-utils
+         heroku node npm nyan osx pip python sprunge supervisor
+         vi-mode vundle zsh-syntax-highlighting)
+
 
 source $ZSH/oh-my-zsh.sh
 
 # Plugin Stuff
 # Agnoster Theme:
 export DEFAULT_USER=johnliu
-
-# vi Editing Mode
-bindkey -v
 
 # Z tool.
 . `brew --prefix`/etc/profile.d/z.sh
