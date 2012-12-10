@@ -203,6 +203,15 @@ let g:solarized_constrast = "normal"
 let g:solarized_visibility = "normal"
 colorscheme solarized
 
+" Set font for GUI vim.
+if has("gui_running")
+  set guifont=Monaco:h14
+  set guioptions-=T
+  set guioptions-=r
+  set guioptions-=R
+  set guioptions-=l
+  set guioptions-=L
+endif
 
 " FILES, BACKUPS AND UNDOS
 " Turn backup off (mostly using git, etc anyway)
