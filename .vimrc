@@ -72,10 +72,12 @@ inoremap <expr> <tab> pumvisible() ? "\<cr>" : "\<tab>"
 let g:snips_trigger_key = '<s-tab>'
 let g:snips_trigger_key_backwards = '<s-c-tab>'
 
-
 " Powerline configurations
 let g:Powerline_symbols = 'fancy'
 
+" Python-mode configurations
+let g:pymode_indent = 0
+let g:pymode_folding = 0
 
 " GENERAL
 " Sets how many lines VIM has to remember.
