@@ -14,6 +14,7 @@ alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
 alias v="vim"
 alias h="history"
 alias j="jobs"
+alias python="ipython"
 
 # Activate the virtualenv of this project.
 alias venv="source venv/bin/activate"
