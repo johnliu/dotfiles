@@ -33,8 +33,8 @@ eval `gdircolors ~/.dircolors`
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(brew coffee compleat encode64 git gnu-utils
-         heroku node npm nyan osx pip python sprunge supervisor
-         vi-mode vundle zsh-syntax-highlighting)
+         heroku node npm osx pip python sprunge
+         vi-mode zsh-syntax-highlighting)
 
 
 source $ZSH/oh-my-zsh.sh
