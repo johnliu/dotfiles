@@ -46,5 +46,35 @@ export DEFAULT_USER=johnliu
 # Z tool.
 . `brew --prefix`/etc/profile.d/z.sh
 
+# Function to allow toggling parse_git_dirty flag. This function call is really
+# slow on large directories, so we have a flag that can turn it off (it's otherwise
+# useful).
+function check_parse_git_dirty() {
+  if [[ -a ~/.zsh_cache ]]; then
+    PARSE_GIT_DIRTY=$(cat ~/.zsh_cache)
+  else
+    PARSE_GIT_DIRTY=true
+  fi
+}
+
+function parse_git_dirty_toggle() {
+  check_parse_git_dirty
+
+  if ( $PARSE_GIT_DIRTY ) {
+    PARSE_GIT_DIRTY=false
+    echo 'Git dirty check is now off.'
+  } else {
+    PARSE_GIT_DIRTY=true
+    echo 'Git dirty check is now on.'
+  }
+
+  echo $PARSE_GIT_DIRTY > ~/.zsh_cache
+}
+
+# Called initially to set from cache.
+check_parse_git_dirty
+
+alias toggledirty=parse_git_dirty_toggle
+
 # Customize to your needs...
 export PATH=/Users/johnliu/.rvm/gems/ruby-1.9.2-p320/bin:/Users/johnliu/.rvm/gems/ruby-1.9.2-p320@global/bin:/Users/johnliu/.rvm/rubies/ruby-1.9.2-p320/bin:/Users/johnliu/.rvm/bin:/Users/johnliu/Projects/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/johnliu/.rvm/bin
