@@ -46,6 +46,10 @@ export DEFAULT_USER=johnliu
 # Z tool.
 . `brew --prefix`/etc/profile.d/z.sh
 
+# vi-mode Settings
+bindkey "^H" backward-delete-char
+bindkey "^?" backward-delete-char
+
 # Function to allow toggling parse_git_dirty flag. This function call is really
 # slow on large directories, so we have a flag that can turn it off (it's otherwise
 # useful).
