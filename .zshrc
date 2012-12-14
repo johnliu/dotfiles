@@ -32,9 +32,9 @@ eval `gdircolors ~/.dircolors`
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(brew coffee compleat encode64 git gnu-utils
-         heroku node npm osx pip python sprunge
-         vi-mode zsh-syntax-highlighting)
+plugins=(vi-mode brew bundler cake coffee compleat dircycle encode64 gem 
+         git gnu-utils heroku history-substring-search node npm osx 
+         pip python ruby rails rails3 rvm sprunge zsh-syntax-highlighting)
 
 
 source $ZSH/oh-my-zsh.sh
@@ -45,6 +45,9 @@ export DEFAULT_USER=johnliu
 
 # Z tool.
 . `brew --prefix`/etc/profile.d/z.sh
+
+# RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . $HOME/.rvm/scripts/rvm
 
 # vi-mode Settings
 bindkey "^H" backward-delete-char

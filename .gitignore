@@ -1,14 +1,11 @@
 # Network history
 .netrwhist
 
-# Compiled python files
+# Python files
 *.pyc
+.ropeproject
 
 # OS X files
 .DS_Store
 .Spotlight-V100
 .Trashes
-
-# Vundles
-.vim/bundle/*
-!.vim/bundle/vundle

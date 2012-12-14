@@ -1,6 +1,7 @@
 [color]
   ui = auto
-        
+  diff = auto
+
 [color "branch"]
   current = yellow reverse
   local = yellow
@@ -29,5 +30,9 @@
 [core]
   excludesfile = /Users/johnliu/.gitignore
   editor = /usr/bin/vim
+
 [push]
   default = matching
+
+[github]
+  user = johnliu

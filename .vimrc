@@ -35,6 +35,12 @@ Bundle 'fholgado/minibufexpl.vim'
 Bundle 'Raimondi/delimitMate'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'klen/python-mode'
+Bundle 'benmills/vimux'
+Bundle 'mattn/zencoding-vim'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'mattn/webapi-vim'
+Bundle 'mattn/gist-vim'
+Bundle 'Shougo/neocomplcache'
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
@@ -42,7 +48,7 @@ let mapleader = ","
 let g:mapleader = ","
 
 " Gundo configurations:
-nnoremap <F5> :GundoToggle<cr>
+nnoremap <silent> <leader>u :GundoToggle<cr>
 
 " Yankring configurations:
 let g:yankring_history_file = '.yankring_history'
@@ -66,8 +72,6 @@ let g:syntastic_check_on_open = 1
 let g:SuperTabMappingForward = '<c-k>'
 let g:SuperTabMappingBackward = '<c-j>'
 
-inoremap <expr> <tab> pumvisible() ? "\<cr>" : "\<tab>"
-
 " SnipMate configurations
 let g:snips_trigger_key = '<s-tab>'
 let g:snips_trigger_key_backwards = '<s-c-tab>'
@@ -78,6 +82,50 @@ let g:Powerline_symbols = 'fancy'
 " Python-mode configurations
 let g:pymode_indent = 0
 let g:pymode_folding = 0
+let g:pymode_rope_guess_project = 0
+let g:pymode_rope_vim_completion = 0
+let g:pymode_lint_ignore = 'E111'
+
+" Gist-vim configurations
+let g:gist_clip_command = 'pbcopy'
+let g:gist_detect_filetype = 1
+let g:gist_show_privates = 1
+let g:gist_post_private = 1
+
+" Zen-coding configurations
+let g:user_zen_leader_key = '<c-x>'
+
+" neocomplcache configurations
+let g:acp_enableAtStartup = 0
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_ignore_case = 0
+let g:neocomplcache_enable_smart_case = 1
+let g:neocomplcache_enable_underbar_completion = 1
+let g:neocomplcache_enable_camel_case_completion = 1
+let g:neocomplcache_min_keyword_length = 3
+let g:neocomplcache_enable_auto_select = 1
+
+let g:neocomplcache_compare_function = 'neocomplcache#compare_human'
+
+if !exists('g:neocomplcache_omni_patterns')
+  let g:neocomplcache_omni_patterns = {}
+endif
+
+if !exists('g:neocomplcache_disabled_sources_list')
+  let g:neocomplcache_disabled_sources_list = {}
+endif
+
+inoremap <expr> <tab> pumvisible() ? CommonStringOrFinish() : "\<tab>"
+
+function! CommonStringOrFinish()
+  let l:result = neocomplcache#complete_common_string()
+
+  if l:result != ''
+    return l:result
+  endif
+
+  return "\<cr>"
+endfunction
 
 " GENERAL
 " Sets how many lines VIM has to remember.
@@ -128,6 +176,9 @@ set so=7
 " Turn on Wild menu
 set wildmenu
 set wildmode=list:longest
+
+" Completeopt
+set completeopt=menuone,longest
 
 " Always show current position
 set ruler
@@ -269,22 +320,6 @@ vnoremap <silent> # :call VisualSearch('b')<cr>
 " STATUS LINE
 " Always hide the status line
 set laststatus=2
-
-" Format the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{CurDir()}%h\ \ \ Line:\ %l/%L:%c
-
-function! CurDir()
-  let curdir = substitute(getcwd(), '/Users/amir/', "~/", "g")
-  return curdir
-endfunction
-
-function! HasPaste()
-  if &paste
-    return 'PASTE MODE  '
-  else
-    return ''
-  endif
-endfunction
 
 " PARENTHESIS EXPANSION
 vnoremap $1 <esc>`>a)<esc>`<i(<esc>
