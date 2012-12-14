@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import os
+import shutil
 
 # List of files to be ignored by the script.
 ignored_files = ['.git', 'README.md', 'setup', '.gitmodules']
@@ -21,7 +22,11 @@ def main():
       # Delete the file if it's already in the destination to overwrite.
       if file in dst:
         print "Removing old copy of: " + file
-        os.remove(dstDir + '/' + file)
+
+        try:
+          os.remove(dstDir + '/' + file)
+        except OSError:
+          shutil.rmtree(dstDir + '/' + file)
 
       print "Creating symlink of file: " + file
       os.symlink(srcDir + '/' + file, dstDir + '/' + file)
@@ -30,4 +35,3 @@ def main():
 
 if __name__ == '__main__':
   main()
-
