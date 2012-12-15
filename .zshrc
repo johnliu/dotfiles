@@ -33,7 +33,7 @@ eval `gdircolors ~/.dircolors`
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(vi-mode brew bundler cake coffee compleat dircycle encode64 gem 
-         git gnu-utils heroku history-substring-search node npm osx 
+         git github gnu-utils heroku history-substring-search node npm osx
          pip python ruby rails rails3 rvm sprunge zsh-syntax-highlighting)
 
 
