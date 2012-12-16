@@ -6,6 +6,8 @@ alias v="vim"
 alias venv="source venv/bin/activate"
 alias ls="gls --color"
 alias python="ipython"
+alias gh="hub"
+alias github="hub"
 
 # Enable aliases to be sudo'ed.
 alias sudo="sudo "

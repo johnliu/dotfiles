@@ -36,3 +36,7 @@
 
 [github]
   user = johnliu
+[diff]
+  tool = vimdiff
+[difftool]
+  prompt = false
