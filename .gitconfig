@@ -38,3 +38,4 @@
   tool = fugitive
 [mergetool]
   prompt = false
+  keepBackup = false
