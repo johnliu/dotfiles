@@ -79,6 +79,9 @@ let g:snips_trigger_key_backwards = '<s-c-tab>'
 " Powerline configurations
 let g:Powerline_symbols = 'fancy'
 
+" MiniBufExpl configurations
+let g:miniBufExplHideWhenDiff = 1
+
 " Python-mode configurations
 let g:pymode_indent = 0
 let g:pymode_folding = 0
