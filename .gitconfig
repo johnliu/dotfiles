@@ -32,3 +32,9 @@
   tool = vimdiff
 [difftool]
   prompt = false
+[mergetool "fugitive"]
+  cmd = vim -f -c \"Gdiff\" \"$MERGED\"
+[merge]
+  tool = fugitive
+[mergetool]
+  prompt = false
