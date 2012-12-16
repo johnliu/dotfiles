@@ -41,6 +41,7 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 Bundle 'Shougo/neocomplcache'
+Bundle 'derekwyatt/vim-scala'
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
