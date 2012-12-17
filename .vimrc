@@ -88,7 +88,7 @@ let g:pymode_indent = 0
 let g:pymode_folding = 0
 let g:pymode_rope_guess_project = 0
 let g:pymode_rope_vim_completion = 0
-let g:pymode_lint_ignore = 'E111'
+let g:pymode_lint_ignore = 'E111,E501'
 
 " Gist-vim configurations
 let g:gist_clip_command = 'pbcopy'
@@ -356,10 +356,13 @@ nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> :bp<cr>
 nnoremap <right> :bn<cr>
-"inoremap <up> <nop>
-"inoremap <down> <nop>
-"inoremap <left> <nop>
-"inoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <esc>:bp<cr>
+inoremap <right> <esc>:bn<cr>
+
+" Disable shift + K opening man pages.
+nnoremap <s-k> <nop>
 
 " Don't need shift for commands.
 nnoremap ; :
