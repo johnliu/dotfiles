@@ -163,8 +163,8 @@ cmap w!! %!sudo tee > /dev/null %
 " When vimrc is edited, reload it
 autocmd! bufwritepost .vimrc source ~/.vimrc
 
-" Speed up <SHIFT> 0
-set timeout timeoutlen=5000 ttimeoutlen=100
+" Speed up <SHIFT> O
+set timeout timeoutlen=500 ttimeoutlen=50
 
 " Better Copy and Paste
 set pastetoggle=<F2>
@@ -356,10 +356,10 @@ nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> :bp<cr>
 nnoremap <right> :bn<cr>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <esc>:bp<cr>
-inoremap <right> <esc>:bn<cr>
+"inoremap <up> <nop>
+"inoremap <down> <nop>
+"inoremap <left> <esc>:bp<cr>
+"inoremap <right> <esc>:bn<cr>
 
 " Disable shift + K opening man pages.
 nnoremap <s-k> <nop>
