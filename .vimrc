@@ -40,6 +40,7 @@ Bundle 'mattn/zencoding-vim'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
+Bundle 'johnliu/eclim.vim'
 Bundle 'Shougo/neocomplcache'
 Bundle 'derekwyatt/vim-scala'
 
@@ -61,6 +62,9 @@ let g:ctrlp_cmd = 'CtrlP'
 
 " NerdTree configurations
 nnoremap <silent> <leader>n :NERDTreeToggle<cr>
+
+" NerdCommenter configurations
+let g:NERDSpaceDelims = 1
 
 " TagBar configurations
 nnoremap <silent> <leader>m :TagbarToggle<cr>
