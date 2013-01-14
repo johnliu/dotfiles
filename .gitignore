@@ -1,6 +1,9 @@
 # Network history
 .netrwhist
 
+# Java files
+*.class
+
 # Python files
 *.pyc
 .ropeproject
