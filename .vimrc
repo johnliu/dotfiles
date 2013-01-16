@@ -135,6 +135,8 @@ function! CommonStringOrFinish()
   return "\<cr>"
 endfunction
 
+autocmd FileType * if &completefunc != '' | let &omnifunc=&completefunc | endif
+
 " GENERAL
 " Sets how many lines VIM has to remember.
 set history=700
