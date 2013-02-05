@@ -1,6 +1,7 @@
 # Shortcuts
 alias todos="grep -rn --color --exclude=activate 'TODO(johnliu)' ."
 alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
+alias psql="/Applications/Postgres.app/Contents/MacOS/bin/psql"
 alias vi="vim"
 alias v="vim"
 alias venv="source venv/bin/activate"

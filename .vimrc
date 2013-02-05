@@ -43,6 +43,7 @@ Bundle 'mattn/gist-vim'
 Bundle 'johnliu/eclim.vim'
 Bundle 'Shougo/neocomplcache'
 Bundle 'derekwyatt/vim-scala'
+Bundle 'c.vim'
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
@@ -140,6 +141,10 @@ autocmd FileType * if &completefunc != '' | let &omnifunc=&completefunc | endif
 " GENERAL
 " Sets how many lines VIM has to remember.
 set history=700
+
+" Set up per project exrc
+set exrc
+set secure
 
 " Enable filetype plugin
 filetype plugin on
@@ -293,10 +298,10 @@ autocmd BufLeave,FocusLost * silent! wall
 
 " TEXT, TAB AND INDENT RELATED
 set expandtab
+set smarttab
 set shiftwidth=2
 set tabstop=2
 set softtabstop=2
-set smarttab
 
 set lbr
 set tw=0
@@ -386,6 +391,8 @@ nnoremap <C-l> <C-w>l
 " Fix saving issues.
 :ca WQ wq
 :ca Wq wq
+:ca QA qa
+:ca Qa qa
 :ca W w
 :ca Q q
 
