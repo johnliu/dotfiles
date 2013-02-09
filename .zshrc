@@ -83,5 +83,29 @@ check_parse_git_dirty
 
 alias toggledirty=parse_git_dirty_toggle
 
+function path() {
+  TMP=$IFS
+  IFS=$":"
+  for i in $(echo $PATH)
+  do
+    echo $i
+  done
+  IFS=$TMP
+}
+
 # Customize to your needs...
-export PATH=/Users/johnliu/.rvm/gems/ruby-1.9.2-p320/bin:/Users/johnliu/.rvm/gems/ruby-1.9.2-p320@global/bin:/Users/johnliu/.rvm/rubies/ruby-1.9.2-p320/bin:/Users/johnliu/.rvm/bin:/Users/johnliu/Projects/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/share/npm/bin
+PATH=`sed -e '/^#/'d -e '/^$/'d << EOF | paste -s -d ":" -
+# Local Path
+/User/johnliu/Projects/bin
+
+# Reorder for brew, etc.
+/usr/local/bin
+$PATH
+/usr/local/share/npm/bin
+
+# Applications
+/usr/local/Cellar/android-ndk/r8d/toolchains/arm-linux-androideabi-4.4.3/prebuilt/darwin-x86/arm-linux-androideabi/bin
+/Applications/MATLAB_R2012b.app/bin
+
+# Old Path
+EOF`
