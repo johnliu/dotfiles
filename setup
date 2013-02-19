@@ -8,13 +8,13 @@ ignored_files = ['README.md', 'setup']
 
 
 def main():
-  dstDir = os.environ['HOME']
-  srcDir = os.getcwd()
-  src = os.listdir(srcDir)
-  dst = os.listdir(dstDir)
+  dst_dir = os.environ['HOME']
+  src_dir = os.getcwd()
+  src = os.listdir(src_dir)
+  dst = os.listdir(dst_dir)
 
-  print 'Source: %s' % srcDir
-  print 'Destination: %s' % dstDir
+  print 'Source: %s' % src_dir
+  print 'Destination: %s' % dst_dir
 
   for file in src:
     if file not in ignored_files and not file.startswith('.'):
@@ -28,7 +28,7 @@ def main():
           print "Are you sure you want to copy it (Y/n):",
 
           response = raw_input()
-          print ""
+          print ''
 
           if response == 'n' or response == 'Y':
             break
@@ -41,12 +41,12 @@ def main():
         print 'Removing: .%s' % file
 
         try:
-          os.remove(dstDir + '/.%s' % file)
+          os.remove('%s/.%s' % (dst_dir, file))
         except OSError:
-          shutil.rmtree(dstDir + '/.%s' % file)
+          shutil.rmtree('%s/.%s' % (dst_dir, file))
 
       print 'Creating: .%s' % file
-      os.symlink('%s/%s' % (srcDir, file), '%s/.%s' % (dstDir, file))
+      os.symlink('%s/%s' % (src_dir, file), '%s/.%s' % (dst_dir, file))
 
   return
 

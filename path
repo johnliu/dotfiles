@@ -2,7 +2,7 @@ NODE_PATH='/usr/local/lib/node'
 
 PATH=`sed -e '/^#/'d -e '/^$/'d << EOF | paste -s -d ":" -
 # Local Path
-/User/johnliu/Projects/bin
+/Users/johnliu/Projects/bin
 
 # Reorder for brew, etc.
 /usr/local/bin
