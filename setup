@@ -13,22 +13,39 @@ def main():
   src = os.listdir(srcDir)
   dst = os.listdir(dstDir)
 
-  print "Source: " + srcDir
-  print "Destination: " + dstDir
+  print 'Source: %s' % srcDir
+  print 'Destination: %s' % dstDir
 
   for file in src:
     if file not in ignored_files and not file.startswith('.'):
 
+      # Double check if the user really wants to copy gitconfig.
+      if file == 'gitconfig':
+
+        response = None
+        while not response:
+          print "\nThis gitconfig contains the author's information. "
+          print "Are you sure you want to copy it (Y/n):",
+
+          response = raw_input()
+          print ""
+
+          if response == 'n' or response == 'Y':
+            break
+
+        if response == 'n':
+          continue
+
       # Delete the file if it's already in the destination to overwrite.
       if ('.%s' % file) in dst:
-        print "Removing old copy of: .%s" % file
+        print 'Removing: .%s' % file
 
         try:
           os.remove(dstDir + '/.%s' % file)
         except OSError:
           shutil.rmtree(dstDir + '/.%s' % file)
 
-      print "Creating symlink of file: .%s" % file
+      print 'Creating: .%s' % file
       os.symlink('%s/%s' % (srcDir, file), '%s/.%s' % (dstDir, file))
 
   return

@@ -1,3 +1,27 @@
+[user]
+  name = John Liu
+  email = johnyuhanliu@gmail.com
+[github]
+  user = johnliu
+
+[core]
+  excludesfile = /Users/johnliu/.gitignore
+  editor = /usr/bin/vim
+[push]
+  default = matching
+
+[diff]
+  tool = vimdiff
+[difftool]
+  prompt = false
+[mergetool "fugitive"]
+  cmd = vim -f -c \"Gdiff\" \"$MERGED\"
+[merge]
+  tool = fugitive
+[mergetool]
+  prompt = false
+  keepBackup = false
+
 [color]
   ui = auto
   diff = auto
@@ -14,28 +38,8 @@
   added = yellow
   changed = green
   untracked = cyan
-[user]
-  name = John Liu
-  email = johnyuhanliu@gmail.com
+
 [alias]
   pullr = pull --rebase
   lol = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   list = show --pretty="format:" --name-only
-[core]
-  excludesfile = /Users/johnliu/.gitignore
-  editor = /usr/bin/vim
-[push]
-  default = matching
-[github]
-  user = johnliu
-[diff]
-  tool = vimdiff
-[difftool]
-  prompt = false
-[mergetool "fugitive"]
-  cmd = vim -f -c \"Gdiff\" \"$MERGED\"
-[merge]
-  tool = fugitive
-[mergetool]
-  prompt = false
-  keepBackup = false

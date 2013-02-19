@@ -1,0 +1,42 @@
+# Pretty print $PATH
+function path() {
+  TMP=$IFS
+  IFS=$":"
+
+  for i in $(echo $PATH)
+  do
+    echo $i
+  done
+
+  IFS=$TMP
+}
+
+# Allow toggling check for parse_git_dirty for the agnoster oh-my-zsh theme.
+function zsh_check_git() {
+  if [[ -a ~/.zsh_cache ]]; then
+    ZSH_THEME_CHECK_GIT=$(cat ~/.zsh_cache)
+  else
+    ZSH_THEME_CHECK_GIT=true
+  fi
+}
+
+# Toggle checking of parse_git_dirty for the agnoster oh-my-zsh theme.
+function zsh_toggle_check_git() {
+  zsh_check_git
+
+  if ( $ZSH_THEME_CHECK_GIT ) {
+    ZSH_THEME_CHECK_GIT=false
+    echo 'Git dirty check is now off.'
+  } else {
+    ZSH_THEME_CHECK_GIT=true
+    echo 'Git dirty check is now on.'
+  }
+
+  echo $ZSH_THEME_CHECK_GIT > ~/.zsh_cache
+}
+
+# Called initially to set from cache.
+zsh_check_git
+
+alias togglecheck=zsh_toggle_check_git
+

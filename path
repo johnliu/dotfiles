@@ -1,0 +1,17 @@
+NODE_PATH='/usr/local/lib/node'
+
+PATH=`sed -e '/^#/'d -e '/^$/'d << EOF | paste -s -d ":" -
+# Local Path
+/User/johnliu/Projects/bin
+
+# Reorder for brew, etc.
+/usr/local/bin
+$PATH
+/usr/local/share/npm/bin
+
+# Applications
+/usr/local/Cellar/android-ndk/r8d/toolchains/arm-linux-androideabi-4.4.3/prebuilt/darwin-x86/arm-linux-androideabi/bin
+/Applications/MATLAB_R2012b.app/bin
+
+# Old Path
+EOF`
