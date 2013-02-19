@@ -8,7 +8,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="agnoster"
 
 # Aliases
-source ~/.zsh_aliases
+source ~/.aliases
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"

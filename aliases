@@ -1,20 +1,44 @@
-# Shortcuts
-alias todos="grep -rn --color --exclude=activate 'TODO(johnliu)' ."
-alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
-alias psql="/Applications/Postgres.app/Contents/MacOS/bin/psql"
+# APPLICATION SHORTCUTS
+# =====================
+
+# vim
+if [ -f "/Applications/MacVim.app/Contents/MacOS/Vim" ]; then
+  alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
+fi
+
 alias vi="vim"
 alias v="vim"
-alias venv="source venv/bin/activate"
-alias ls="gls --color"
-alias python="ipython"
-alias gh="hub"
-alias github="hub"
 
-# Enable aliases to be sudo'ed.
+# postgres
+if [ -f "/Applications/Postgres.app/Contents/MacOS/bin/psql" ]; then
+  alias psql="/Applications/Postgres.app/Contents/MacOS/bin/psql"
+fi
+
+# coreutils
+if type "gls" > /dev/null; then
+  alias ls="gls --color"
+fi
+
+# python
+if type "ipython" > /dev/null; then
+  alias python="ipython"
+fi
+
+# hub
+if type "hub" > /dev/null; then
+  alias gh="hub"
+  alias github="hub"
+fi
+
+# SHORTCUTS
+# =========
+
 alias sudo="sudo "
 
-# OS X software updates and brew updates
-alias update="sudo softwareupdate -i -a; brew update; brew upgrade"
+alias todo="grep -rn --color --exclude=activate 'TODO(johnliu)' ."
+alias todos="todo"
+
+alias venv="source venv/bin/activate"
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -39,4 +63,3 @@ alias hide="defaults write com.apple.Finder AppleShowAllFiles -bool false && kil
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
   alias "$method"="lwp-request -m '$method'"
 done
-

@@ -95,8 +95,12 @@ case $TERM in
     ;;
 esac
 
-# BASH ALIASES
+# ALIASES
 # ============
+
+if [ -f ~/.aliases ]; then
+    . ~/.aliases
+fi
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
