@@ -10,8 +10,11 @@ $PATH
 /usr/local/share/npm/bin
 
 # Applications
-/usr/local/Cellar/android-ndk/r8d/toolchains/arm-linux-androideabi-4.4.3/prebuilt/darwin-x86/arm-linux-androideabi/bin
 /Applications/MATLAB_R2012b.app/bin
+
+# Android Kernel
+/usr/local/Cellar/android-ndk/r8d/toolchains/arm-linux-androideabi-4.4.3/prebuilt/darwin-x86/arm-linux-androideabi/bin
+/Users/johnliu/Projects/school/ece353/tools/tools
 
 # Old Path
 EOF`
