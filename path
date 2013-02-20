@@ -13,7 +13,7 @@ $PATH
 /Applications/MATLAB_R2012b.app/bin
 
 # Android Kernel
-/usr/local/Cellar/android-ndk/r8d/toolchains/arm-linux-androideabi-4.4.3/prebuilt/darwin-x86/arm-linux-androideabi/bin
+`brew --prefix android-ndk`/toolchains/arm-linux-androideabi-4.4.3/prebuilt/darwin-x86/bin
 /Users/johnliu/Projects/school/ece353/tools/tools
 
 # Old Path
