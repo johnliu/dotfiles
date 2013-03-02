@@ -260,7 +260,7 @@ set number
 "set background=dark
 
 " Differentiate tabs, spaces, and other whitespace characters.
-set listchars=eol:$,tab:->,trail:~
+set listchars=eol:¬,tab:▸\ ,trail:~
 
 " solarized options
 let g:solarized_termtrans = 1
