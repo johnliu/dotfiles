@@ -14,6 +14,11 @@ if [ -f "/Applications/Postgres.app/Contents/MacOS/bin/psql" ]; then
   alias psql="/Applications/Postgres.app/Contents/MacOS/bin/psql"
 fi
 
+# mathematica
+if [ -f "/Applications/Mathematica.app/Contents/MacOS/MathKernel" ]; then
+  alias mathematica="/Applications/Mathematica.app/Contents/MacOS/MathKernel"
+fi
+
 # coreutils
 if type "gls" &> /dev/null; then
   alias ls="gls --color"
