@@ -3,6 +3,8 @@
   email = johnyuhanliu@gmail.com
 [github]
   user = johnliu
+[todo]
+  user = johnliu
 
 [core]
   excludesfile = /Users/johnliu/.gitignore
