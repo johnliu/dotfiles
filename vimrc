@@ -41,6 +41,7 @@ Bundle 'sjl/gundo.vim'
 Bundle 'fholgado/minibufexpl.vim'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'kien/ctrlp.vim'
+Bundle 'altercation/vim-colors-solarized'
 
 " Editing Upgrades
 Bundle 'ack.vim'
@@ -87,6 +88,23 @@ let g:gist_post_private = 1
 " mattn/zencoding-vim
 let g:user_zen_leader_key = '<c-x>'
 
+" altercation/vim-colors-solarized
+let g:solarized_termtrans = 1
+let g:solarized_termcolors = 256
+let g:solarized_constrast = "normal"
+let g:solarized_visibility = "normal"
+colorscheme solarized
+
+" Set font for GUI vim.
+if has("gui_running")
+  set guifont=Monaco:h14
+  set guioptions-=T
+  set guioptions-=r
+  set guioptions-=R
+  set guioptions-=l
+  set guioptions-=L
+endif
+
 " Shougo/neocomplcache
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_ignore_case = 0
@@ -105,22 +123,25 @@ if !exists('g:neocomplcache_disabled_sources_list')
   let g:neocomplcache_disabled_sources_list = {}
 endif
 
-inoremap <expr> <tab> pumvisible() ? CommonStringOrFinish() : "\<tab>"
-
-function! CommonStringOrFinish()
-  let l:result = neocomplcache#complete_common_string()
-
-  if l:result != ''
-    return l:result
+function! CompleteCommonStringOrFinish(normal)
+  if pumvisible()
+    let l:result = neocomplcache#complete_common_string()
+    let l:check = neocomplcache#get_cur_text()
+    if l:result != '' && strlen(l:result) - strridx(l:result, l:check) != strlen(l:check)
+      return l:result
+    endif
+    return "\<cr>"
   endif
-
-  return "\<cr>"
+  return a:normal
 endfunction
 
 autocmd FileType * if &completefunc != '' | let &omnifunc=&completefunc | endif
 
+
 " Key Remappings
 " ==============
+
+" Bundle Mappings
 
 " sjl/gundo.vim
 nnoremap <silent> <leader>u :GundoToggle<cr>
@@ -137,222 +158,29 @@ nnoremap <silent> <leader>m :TagbarToggle<cr>
 " mattn/zencoding-vim
 " <c-x> toggles zencoding (mapped using zencoding's global variable)
 
+" Shougo/neocomplcache
+inoremap <expr> <tab> CompleteCommonStringOrFinish("\<tab>")
 
-" GENERAL
-" Sets how many lines VIM has to remember.
-set history=700
+" Other Mappings
 
-" Set up per project exrc
-set exrc
-set secure
+" Quickly edit vimrc.
+nnoremap <leader>e :e! ~/.vimrc<cr>
 
-" Enable filetype plugin
-filetype plugin on
-filetype indent on
+" Force save read only files.
+cnoremap w!! %!sudo tee > /dev/null %
 
-" Modelines security exploits
-set modelines=0
-
-" Show line with cursor
-set cursorline
-
-" Fast terminal
-set ttyfast
-
-" Set to auto read when a file is changed from the outside
-set autoread
-
-" Fast editing of the .vimrc
-map <leader>e :e! ~/.vimrc<cr>
-
-" Force saving of read only files.
-cmap w!! %!sudo tee > /dev/null %
-
-" When vimrc is edited, reload it
-autocmd! bufwritepost .vimrc source ~/.vimrc
-
-" Speed up <SHIFT> O
-set timeout timeoutlen=500 ttimeoutlen=50
-
-" Better Copy and Paste
-set pastetoggle=<F2>
-set clipboard=unnamed
-
-" VIM UI
-" Add mouse scrolling.
-set mouse=a
-
-" Start scrolling 7 lines before the top/bottom
-set so=7
-
-" Turn on Wild menu
-set wildmenu
-set wildmode=list:longest
-
-" Completeopt
-set completeopt=menuone,longest
-
-" Always show current position
-set ruler
-
-" Command bar height
-set cmdheight=2
-
-" Change buffer, without saving.
-set hid
-
-" Set backspace config
-set backspace=eol,start,indent
-set whichwrap+=<,>,h,l
-
-" Ignore case when searching
-set ignorecase
-set smartcase
-
-" Highlight search results
-set hlsearch
-
-" Make search act like in modern browsers
-set incsearch
-
-" Fix broken regex in modern browsers
-nnoremap / /\v
-vnoremap / /\v
-
-" Default global substitution
-set gdefault
-
-" Clear highlighting.
+" Clears highlighting.
 nnoremap <leader><space> :noh<cr>
-
-" Do not redraw when executing macros
-set nolazyredraw
-
-" Magic for reuglar expressions
-set magic
-
-" Show matching bracket indicator when text indicator is over them
-set showmatch
-
-" How many tenths of a second to blink
-set mat=2
-
-" No sound on errors
-set noerrorbells
-set novisualbell
-set t_vb=
-set tm=500
-
-" COLORS AND FONT
-" Enable syntax highlighting
-syntax enable
-
-set encoding=utf8
-try
-  lang en_US
-catch
-endtry
-
-set number
-"set background=dark
-
-" Differentiate tabs, spaces, and other whitespace characters.
-set listchars=eol:¬,tab:▸·,trail:·
-
-" solarized options
-let g:solarized_termtrans = 1
-let g:solarized_termcolors = 256
-let g:solarized_constrast = "normal"
-let g:solarized_visibility = "normal"
-colorscheme solarized
-
-" Set font for GUI vim.
-if has("gui_running")
-  set guifont=Monaco:h14
-  set guioptions-=T
-  set guioptions-=r
-  set guioptions-=R
-  set guioptions-=l
-  set guioptions-=L
-endif
-
-" FILES, BACKUPS AND UNDOS
-" Turn backup off (mostly using git, etc anyway)
-set nobackup
-set nowb
-set noswapfile
-
-" Persistent undo
-try
-  set undodir=~/.vim_runtime/undodir
-  set undofile
-catch
-endtry
-
-" Autosave buffers on lose focus
-autocmd BufLeave,FocusLost * silent! wall
-
-
-" TEXT, TAB AND INDENT RELATED
-set expandtab
-set smarttab
-set shiftwidth=2
-set tabstop=2
-set softtabstop=2
-
-set lbr
-set tw=0
-set colorcolumn=100
-set nowrap
-set fo-=t
-"highlight ColorColumn ctermbg=233
-
-" Format options
-set formatoptions=qrn1
-
-" Auto indent
-set ai
-
-" Smart indent
-set si
-au! FileType python setl nosmartindent 
-
-" Wrap lines
-set wrap
 
 " Reselect visual block after indent/outdent
 vnoremap < <gv
 vnoremap > >gv
 
-" VISUAL MODE
-" Press * or # to search the current selection.
-vnoremap <silent> * :call VisualSearch('f')<cr>
-vnoremap <silent> # :call VisualSearch('b')<cr>
-
-" STATUS LINE
-" Always hide the status line
-set laststatus=2
-
-" PARENTHESIS EXPANSION
-
-" EDITING MAPPINGS
-" Delete trailing white space, useful for Python ;)
-func! DeleteTrailingWS()
-  exe "normal mz"
-  %s/\s\+$//ge
-  exe "normal `z"
-endfunc
-autocmd BufWrite *.py :call DeleteTrailingWS()
-
-" Disable arrow keys
+" Disable arrow keys by default, turn them into something useful (switch buffer).
 nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> :bp<cr>
 nnoremap <right> :bn<cr>
-"inoremap <up> <nop>
-"inoremap <down> <nop>
-"inoremap <left> <esc>:bp<cr>
-"inoremap <right> <esc>:bn<cr>
 
 " Disable shift + K opening man pages.
 nnoremap <s-k> <nop>
@@ -370,7 +198,7 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" Fix saving issues.
+" Fix save typos.
 :ca WQ wq
 :ca Wq wq
 :ca QA qa
@@ -380,4 +208,132 @@ nnoremap <C-l> <C-w>l
 
 " Leader to toggle list chars
 nnoremap <leader>l :set list!<cr>
+
+
+" Misc Settings
+" =============
+
+" Remember 700 lines of history.
+set history=700
+
+" Allow per project vimrc
+set exrc
+set secure
+
+" Enable filetype plugin and indent files
+filetype plugin on
+filetype indent on
+
+" Disable modelines (security exploits)
+set modelines=0
+
+" Show line with cursor
+set cursorline
+
+" Fast terminal
+set ttyfast
+
+" Set to auto read when a file is changed from the outside
+set autoread
+
+" Speed up <shift>O
+set timeoutlen=500
+set ttimeoutlen=50
+
+" Better copy and paste
+set pastetoggle=<F2>
+set clipboard=unnamed
+
+" Add mouse scrolling.
+set mouse=a
+
+" Start scrolling 7 lines before the top/bottom
+set scrolloff=14
+
+" Turn on enhanced completions, and set completion options
+set wildmenu
+set wildmode=list:longest
+set completeopt=menuone,longest
+
+" Command bar height
+set cmdheight=2
+
+" Change buffers without saving (allow hidden buffers).
+set hidden
+
+" Set backspace config
+set backspace=eol,start,indent
+set whichwrap+=<,>,h,l
+
+" Ignore case when searching
+set ignorecase
+set smartcase
+
+" Highlight search results
+set hlsearch
+
+" Make search act like in modern browsers
+set incsearch
+
+" Default global substitution
+set gdefault
+
+" Do not redraw when executing macros
+set nolazyredraw
+
+" Magic for reuglar expressions
+set magic
+
+" Show matching bracket indicator when text indicator is over them
+set showmatch
+set matchtime=2
+
+" No sound on errors
+set noerrorbells
+set novisualbell
+set t_vb=
+
+" Attempt to turn on encoding
+set encoding=utf8
+try
+  lang en_US
+catch
+endtry
+
+" Show the line number
+set number
+
+" Enable syntax highlighting
+syntax enable
+
+" Set invisible characters
+set listchars=eol:¬,tab:▸·,trail:·
+
+" Turn backup off (mostly using git, etc anyway)
+set nobackup
+set nowb
+set noswapfile
+
+" Tab settings
+set expandtab
+set smarttab
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2
+
+set linebreak
+set textwidth=0
+set colorcolumn=100
+set wrap
+
+" Format options
+set formatoptions=jqrn1
+
+" Indentation settings
+set autoindent
+set smartindent
+au! FileType python setl nosmartindent 
+
+" Always hide the status line
+set laststatus=2
 
