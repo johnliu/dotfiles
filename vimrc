@@ -73,6 +73,9 @@ let g:NERDSpaceDelims = 1
 " scrooloose/syntastic
 let g:syntastic_quiet_warnings = 1
 let g:syntastic_check_on_open = 1
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol = '⚠'
+let g:syntastic_auto_loc_list = 0
 
 " Lokaltog/vim-powerline
 let g:Powerline_symbols = 'fancy'
