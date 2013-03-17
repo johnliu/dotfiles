@@ -1,111 +1,93 @@
-" BUNDLES
-" Be iMproved required
+" John Liu's vimrc
+"
+" Some general instructions:
+" - Requires `vundle` (https://github.com/gmarik/vundle)
+" - Run `:BundleInstall` on first run.
+
+" Critical Configurations
+" =======================
+
+" Vundle Setup Requirements
 set nocompatible
 filetype on
 filetype off
+
+" Leader Key
+let mapleader = ","
+
+
+" Vundle Bundles
+" ==============
 
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
-" My bundles:
-Bundle 'ack.vim'
+" Languages and Syntax
 Bundle 'othree/html5.vim'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'YankRing.vim'
-Bundle 'sjl/gundo.vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'scrooloose/nerdtree'
-Bundle 'groenewege/vim-less'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'digitaltoad/vim-jade'
-Bundle 'scrooloose/syntastic'
-Bundle 'majutsushi/tagbar'
-Bundle 'kien/ctrlp.vim'
+Bundle 'groenewege/vim-less'
 Bundle 'vim-stylus'
-Bundle 'tpope/vim-surround'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
-Bundle 'honza/snipmate-snippets'
-Bundle 'garbas/vim-snipmate'
-Bundle 'ervandew/supertab'
-Bundle 'AutoComplPop'
-Bundle 'fholgado/minibufexpl.vim'
-Bundle 'Raimondi/delimitMate'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'klen/python-mode'
-Bundle 'benmills/vimux'
-Bundle 'mattn/zencoding-vim'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'mattn/webapi-vim'
-Bundle 'mattn/gist-vim'
-Bundle 'johnliu/eclim.vim'
-Bundle 'Shougo/neocomplcache'
-Bundle 'derekwyatt/vim-scala'
 Bundle 'c.vim'
+Bundle 'derekwyatt/vim-scala'
 
-" With a map leader it's possible to do extra key combinations
-" like <leader>w saves the current file
-let mapleader = ","
-let g:mapleader = ","
+" UI Upgrades
+Bundle 'majutsushi/tagbar'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
+Bundle 'sjl/gundo.vim'
+Bundle 'fholgado/minibufexpl.vim'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'kien/ctrlp.vim'
 
-" Gundo configurations:
-nnoremap <silent> <leader>u :GundoToggle<cr>
+" Editing Upgrades
+Bundle 'ack.vim'
+Bundle 'YankRing.vim'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'Raimondi/delimitMate'
+Bundle 'tpope/vim-surround'
+Bundle 'Shougo/neocomplcache'
+" Bundle 'davidhalter/jedi-vim'
 
-" Yankring configurations:
-let g:yankring_history_file = '.yankring_history'
+" Misc Upgrades
+Bundle 'tpope/vim-fugitive'
+Bundle 'mattn/zencoding-vim'
+Bundle 'mattn/gist-vim'
+Bundle 'mattn/webapi-vim'
 
-" CtrlP configurations
-set wildignore=*.pyc,*.o,.git,node_modules,venv
+" kien/ctrlp.vim
+set wildignore+=*.o,*.pyc,.git,bin,node_modules,venv
 let g:ctrlp_map = '<leader>t'
 let g:ctrlp_cmd = 'CtrlP'
 
-" NerdTree configurations
-nnoremap <silent> <leader>n :NERDTreeToggle<cr>
+" YankRing.vim
+let g:yankring_history_file = '.yankring_history'
 
-" NerdCommenter configurations
+" scrooloose/nerdcommenter
 let g:NERDSpaceDelims = 1
 
-" TagBar configurations
-nnoremap <silent> <leader>m :TagbarToggle<cr>
-
-" Syntastic configurations
+" scrooloose/syntastic
 let g:syntastic_quiet_warnings = 1
 let g:syntastic_check_on_open = 1
 
-" SuperTab configurations
-let g:SuperTabMappingForward = '<c-k>'
-let g:SuperTabMappingBackward = '<c-j>'
-
-" SnipMate configurations
-let g:snips_trigger_key = '<s-tab>'
-let g:snips_trigger_key_backwards = '<s-c-tab>'
-
-" Powerline configurations
+" Lokaltog/vim-powerline
 let g:Powerline_symbols = 'fancy'
 
-" MiniBufExpl configurations
+" fholgado/minibufexpl.vim
 let g:miniBufExplHideWhenDiff = 1
 
-" Python-mode configurations
-let g:pymode_indent = 0
-let g:pymode_folding = 0
-let g:pymode_rope_guess_project = 0
-let g:pymode_rope_vim_completion = 0
-let g:pymode_lint_ignore = 'E111,E501'
-
-" Gist-vim configurations
+" mattn/gist-vim
 let g:gist_clip_command = 'pbcopy'
 let g:gist_detect_filetype = 1
 let g:gist_show_privates = 1
 let g:gist_post_private = 1
 
-" Zen-coding configurations
+" mattn/zencoding-vim
 let g:user_zen_leader_key = '<c-x>'
 
-" neocomplcache configurations
-let g:acp_enableAtStartup = 0
+" Shougo/neocomplcache
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_ignore_case = 0
 let g:neocomplcache_enable_smart_case = 1
@@ -113,7 +95,6 @@ let g:neocomplcache_enable_underbar_completion = 1
 let g:neocomplcache_enable_camel_case_completion = 1
 let g:neocomplcache_min_keyword_length = 3
 let g:neocomplcache_enable_auto_select = 1
-
 let g:neocomplcache_compare_function = 'neocomplcache#compare_human'
 
 if !exists('g:neocomplcache_omni_patterns')
@@ -138,6 +119,25 @@ endfunction
 
 autocmd FileType * if &completefunc != '' | let &omnifunc=&completefunc | endif
 
+" Key Remappings
+" ==============
+
+" sjl/gundo.vim
+nnoremap <silent> <leader>u :GundoToggle<cr>
+
+" kien/ctrlp.vim
+" <leader>t toggles CtrlP (mapped using ctrlp's global variable)
+
+" scrooloose/nerdtree
+nnoremap <silent> <leader>n :NERDTreeToggle<cr>
+
+" majutsushi/tagbar
+nnoremap <silent> <leader>m :TagbarToggle<cr>
+
+" mattn/zencoding-vim
+" <c-x> toggles zencoding (mapped using zencoding's global variable)
+
+
 " GENERAL
 " Sets how many lines VIM has to remember.
 set history=700
@@ -161,9 +161,6 @@ set ttyfast
 
 " Set to auto read when a file is changed from the outside
 set autoread
-
-" Fast saving
-nmap <leader>w :w!<cr>
 
 " Fast editing of the .vimrc
 map <leader>e :e! ~/.vimrc<cr>
@@ -337,21 +334,6 @@ vnoremap <silent> # :call VisualSearch('b')<cr>
 set laststatus=2
 
 " PARENTHESIS EXPANSION
-vnoremap $1 <esc>`>a)<esc>`<i(<esc>
-vnoremap $2 <esc>`>a]<esc>`<i[<esc>
-vnoremap $3 <esc>`>a}<esc>`<i{<esc>
-vnoremap $$ <esc>`>a"<esc>`<i"<esc>
-vnoremap $q <esc>`>a'<esc>`<i'<esc>
-vnoremap $e <esc>`>a"<esc>`<i"<esc>
-
-" Map auto complete of (, ", ', [
-inoremap $1 ()<esc>i
-inoremap $2 []<esc>i
-inoremap $3 {}<esc>i
-inoremap $4 {<esc>o}<esc>O
-inoremap $q ''<esc>i
-inoremap $e ""<esc>i
-inoremap $t <><esc>i
 
 " EDITING MAPPINGS
 " Delete trailing white space, useful for Python ;)
