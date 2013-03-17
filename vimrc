@@ -50,7 +50,8 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'Raimondi/delimitMate'
 Bundle 'tpope/vim-surround'
 Bundle 'Shougo/neocomplcache'
-" Bundle 'davidhalter/jedi-vim'
+Bundle 'davidhalter/jedi-vim'
+Bundle 'Lokaltog/vim-easymotion'
 
 " Misc Upgrades
 Bundle 'tpope/vim-fugitive'
@@ -105,6 +106,13 @@ if has("gui_running")
   set guioptions-=L
 endif
 
+" dhalter/jedi-vim
+let g:jedi#auto_initialization = 1
+let g:jedi#popup_on_dot = 0
+let g:jedi#use_tabs_not_buffers = 0
+let g:jedi#show_function_definition = 0
+autocmd FileType python let b:did_ftplugin = 1
+
 " Shougo/neocomplcache
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_ignore_case = 0
@@ -118,6 +126,11 @@ let g:neocomplcache_compare_function = 'neocomplcache#compare_human'
 if !exists('g:neocomplcache_omni_patterns')
   let g:neocomplcache_omni_patterns = {}
 endif
+
+if !exists('g:neocomplcache_omni_functions')
+  let g:neocomplcache_omni_functions = {}
+endif
+let g:neocomplcache_omni_functions['python'] = 'jedi#complete'
 
 if !exists('g:neocomplcache_disabled_sources_list')
   let g:neocomplcache_disabled_sources_list = {}
@@ -327,7 +340,7 @@ set colorcolumn=100
 set wrap
 
 " Format options
-set formatoptions=jqrn1
+set formatoptions=qrn1
 
 " Indentation settings
 set autoindent
