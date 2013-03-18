@@ -32,6 +32,7 @@ Bundle 'groenewege/vim-less'
 Bundle 'vim-stylus'
 Bundle 'c.vim'
 Bundle 'derekwyatt/vim-scala'
+Bundle 'mattn/zencoding-vim'
 
 " UI Upgrades
 Bundle 'majutsushi/tagbar'
@@ -52,10 +53,10 @@ Bundle 'tpope/vim-surround'
 Bundle 'Shougo/neocomplcache'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'simplyzhao/cscope_maps.vim'
 
 " Misc Upgrades
 Bundle 'tpope/vim-fugitive'
-Bundle 'mattn/zencoding-vim'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
 
