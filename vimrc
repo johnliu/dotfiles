@@ -33,6 +33,7 @@ Bundle 'vim-stylus'
 Bundle 'c.vim'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'mattn/zencoding-vim'
+Bundle 'LaTeX-Suite-aka-Vim-LaTeX'
 
 " UI Upgrades
 Bundle 'majutsushi/tagbar'
