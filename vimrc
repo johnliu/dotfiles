@@ -66,7 +66,17 @@ Bundle 'mattn/webapi-vim'
 " kien/ctrlp.vim
 set wildignore+=*.o,*.pyc,.git,bin,node_modules,venv
 let g:ctrlp_map = '<leader>t'
-let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_mruf_relative = 1
+
+let g:ctrlp_buftag_types = {
+      \ 'go'         : '--language-force=go --golang-types=ftv',
+      \ 'coffee'     : '--language-force=coffee --coffee-types=cmfvf',
+      \ 'markdown'   : '--language-force=markdown --markdown-types=hik',
+      \ 'objc'       : '--language-force=objc --objc-types=mpci',
+      \ }
 
 " YankRing.vim
 let g:yankring_history_file = '.yankring_history'
@@ -172,6 +182,7 @@ nnoremap <silent> <leader>u :GundoToggle<cr>
 
 " kien/ctrlp.vim
 " <leader>t toggles CtrlP (mapped using ctrlp's global variable)
+nnoremap <leader>r :CtrlPBufTagAll<cr>
 
 " scrooloose/nerdtree
 nnoremap <silent> <leader>n :NERDTreeToggle<cr>
