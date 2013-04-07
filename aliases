@@ -35,6 +35,12 @@ if type "hub" &> /dev/null; then
   alias github="hub"
 fi
 
+# latexmk
+if type "latexmk" &> /dev/null; then
+  alias latexmk="latexmk -pdf -pvc"
+  alias mklatex=latexmk
+fi
+
 # SHORTCUTS
 # =========
 

@@ -33,7 +33,7 @@ Bundle 'vim-stylus'
 Bundle 'c.vim'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'mattn/zencoding-vim'
-Bundle 'LaTeX-Suite-aka-Vim-LaTeX'
+" Bundle 'LaTeX-Suite-aka-Vim-LaTeX'
 
 " UI Upgrades
 Bundle 'majutsushi/tagbar'
@@ -44,6 +44,8 @@ Bundle 'fholgado/minibufexpl.vim'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'kien/ctrlp.vim'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'nanotech/jellybeans.vim'
+Bundle 'godlygeek/csapprox'
 
 " Editing Upgrades
 Bundle 'ack.vim'
@@ -99,7 +101,11 @@ let g:solarized_termtrans = 1
 let g:solarized_termcolors = 256
 let g:solarized_constrast = "normal"
 let g:solarized_visibility = "normal"
-colorscheme solarized
+" colorscheme solarized
+
+" nanotech/jellybeans.vim
+let g:jellybeans_use_lowcolor_black = 0
+colorscheme jellybeans
 
 " Set font for GUI vim.
 if has("gui_running")
