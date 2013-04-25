@@ -33,7 +33,7 @@ Bundle 'vim-stylus'
 Bundle 'c.vim'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'mattn/zencoding-vim'
-" Bundle 'LaTeX-Suite-aka-Vim-LaTeX'
+Bundle 'coot/atp_vim'
 
 " UI Upgrades
 Bundle 'majutsushi/tagbar'
@@ -57,6 +57,7 @@ Bundle 'Shougo/neocomplcache'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'simplyzhao/cscope_maps.vim'
+" Bundle 'terryma/vim-multiple-cursors'
 
 " Misc Upgrades
 Bundle 'tpope/vim-fugitive'
@@ -96,6 +97,9 @@ let g:Powerline_symbols = 'fancy'
 
 " fholgado/minibufexpl.vim
 let g:miniBufExplHideWhenDiff = 1
+
+" Raimondi/delimitMate
+let delimitMate_balance_matchpairs = 1
 
 " mattn/gist-vim
 let g:gist_clip_command = 'pbcopy'
@@ -325,7 +329,7 @@ set matchtime=2
 
 " No sound on errors
 set noerrorbells
-set novisualbell
+set visualbell
 set t_vb=
 
 " Attempt to turn on encoding
