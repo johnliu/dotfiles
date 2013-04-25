@@ -1,13 +1,20 @@
-NODE_PATH='/usr/local/lib/node'
+NODE_PATH=`sed -e '/^#/'d -e '/^$/'d << EOF | paste -s -d ":" -
+# jsctags
+/usr/local/lib/jsctags
+
+# Default
+/usr/local/lib/node
+EOF`
 
 PATH=`sed -e '/^#/'d -e '/^$/'d << EOF | paste -s -d ":" -
 # Local Path
-/Users/johnliu/Projects/bin
+/$HOME/Projects/bin
 
 # Reorder for brew, etc.
 /usr/local/bin
 $PATH
 /usr/local/share/npm/bin
+/$HOME/.rvm/bin
 
 # Applications
 /Applications/MATLAB_R2012b.app/bin
@@ -15,6 +22,4 @@ $PATH
 # Android Kernel
 /usr/local/opt/android-ndk/toolchains/arm-linux-androideabi-4.4.3/prebuilt/darwin-x86/bin
 /Users/johnliu/Projects/school/ece353/tools/tools
-
-# Old Path
 EOF`
