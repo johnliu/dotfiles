@@ -173,14 +173,9 @@ statusbar = {
     topic_empty = " Irssi v$J - http://www.irssi.org";
 
     # all of these treated specially, they're only displayed when needed
-    /* lag = "{sb Lag: $0-}"; */
-    /* act = "{sb Act: $0-}"; */
-    /* more = "-- more --"; */
-
-    # Solarized
-    lag = "{sb Lag: %m$0-%n}";
+    lag = "{sb Lag: $0-}";
     act = "{sb Act: $0-}";
-    more = "-- more --%n";
+    more = "-- more --";
   };
 
   # there's two type of statusbars. root statusbars are either at the top
@@ -259,6 +254,13 @@ statusbar = {
         topicbarend = { priority = "100"; alignment = "right"; };
       };
     };
+    awl_0 = {
+      items = {
+        barstart = { priority = "100"; };
+        awl_0 = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
   };
 };
 settings = {
@@ -266,24 +268,8 @@ settings = {
     real_name = "John Liu";
     user_name = "johnliu";
     nick = "johnliu";
-    timestamp_format = "%H:%M:%S";
+    timestamp_format = "%H:%M";
   };
   "fe-text" = { actlist_sort = "refnum"; };
-  "fe-common/core" = {
-    theme = "solarized-universal";
-    hilight_color = "= %R";
-  };
-  "perl/core/scripts" = {
-    # For solarized adv_windowlist.pl script
-    awl_display_key_active = "%k%2[$Q=$N:$C]%n";
-    awl_display_nokey_active = "%k%2[$N:$C]%n";
-    awl_display_key = "[$Q:$H$C$S]";
-    awl_display_nokey = "[$N:$H$C$S]";
-
-    # For Solarized trackbar.pl script
-    trackbar_style = "%B";
-  }
+  "fe-common/core" = { theme = "clean"; };
 };
-hilights = (
-  { text = "johnliu"; color = "%M"; nick = "yes"; word = "yes"; }
-);
