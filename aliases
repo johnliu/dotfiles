@@ -19,6 +19,11 @@ if [ -f "/Applications/Mathematica.app/Contents/MacOS/MathKernel" ]; then
   alias mathematica="/Applications/Mathematica.app/Contents/MacOS/MathKernel"
 fi
 
+# iphone simulator
+if [ -d "/Applications/Xcode.app/Contents/Applications/iPhone Simulator.app" ]; then
+  alias iphonesim="open '/Applications/Xcode.app/Contents/Applications/iPhone Simulator.app'"
+fi
+
 # coreutils
 if type "gls" &> /dev/null; then
   alias ls="gls --color"
