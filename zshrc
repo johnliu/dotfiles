@@ -7,6 +7,9 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME='agnoster'
 DEFAULT_USER='johnliu'
 
+# Default Editor
+export EDITOR='vim'
+
 # Set our own colours for `ls`
 DISABLE_LS_COLORS='true'
 eval `gdircolors ~/.dircolors`
