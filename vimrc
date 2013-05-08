@@ -57,6 +57,8 @@ Bundle 'Shougo/neocomplcache'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'simplyzhao/cscope_maps.vim'
+Bundle 'rizzatti/funcoo.vim'
+Bundle 'rizzatti/dash.vim'
 " Bundle 'terryma/vim-multiple-cursors'
 
 " Misc Upgrades
