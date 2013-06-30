@@ -14,7 +14,7 @@ export EDITOR='vim'
 DISABLE_LS_COLORS='true'
 eval `gdircolors ~/.dircolors`
 
-plugins=(vi-mode brew bundler cake coffee compleat dircycle encode64 gem 
+plugins=(vi-mode brew cake coffee compleat dircycle encode64 gem 
          git gnu-utils heroku history-substring-search node npm osx
          pip python ruby rails rails3 rvm sprunge zsh-syntax-highlighting)
 
