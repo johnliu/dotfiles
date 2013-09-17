@@ -8,6 +8,9 @@
 *.pyc
 .ropeproject
 
+# IDE files
+.idea
+
 # OS X files
 .DS_Store
 .Spotlight-V100
