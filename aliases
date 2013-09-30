@@ -79,3 +79,8 @@ alias hide="defaults write com.apple.Finder AppleShowAllFiles -bool false && kil
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
   alias "$method"="lwp-request -m '$method'"
 done
+
+# Disable/enable password
+alias disablepw="sudo osascript -e 'tell application \"System Events\" to set require password to wake of security preferences to false'"
+alias enablepw="sudo osascript -e 'tell application \"System Events\" to set require password to wake of security preferences to true'"
+
