@@ -33,6 +33,9 @@ source `brew --prefix`/etc/profile.d/z.sh
 bindkey "^H" backward-delete-char
 bindkey "^?" backward-delete-char
 
+# Disable virtualenv prompt
+export VIRTUAL_ENV_DISABLE_PROMPT='true'
+
 # MAIN
 # =====
 
