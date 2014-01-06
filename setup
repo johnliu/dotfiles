@@ -36,12 +36,16 @@ def main():
         if response == 'n':
           continue
 
-      # The fish shell files are a special case, due to sharing the config folder.
+      fish = False
       if f == 'config':
+        if ('.%s' % f) not in dst:
+          os.mkdir('%s/.%s' % (dst_dir, f))
+
         f = 'config/fish'
+        fish = True
 
       # Delete the file if it's already in the destination to overwrite.
-      if ('.%s' % f) in dst:
+      if ('.%s' % f) in dst or fish:
         print 'Removing: .%s' % f
 
         try:
