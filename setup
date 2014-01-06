@@ -16,11 +16,11 @@ def main():
   print 'Source: %s' % src_dir
   print 'Destination: %s' % dst_dir
 
-  for file in src:
-    if file not in ignored_files and not file.startswith('.'):
+  for f in src:
+    if f not in ignored_files and not f.startswith('.'):
 
       # Double check if the user really wants to copy gitconfig.
-      if file == 'gitconfig':
+      if f == 'gitconfig':
 
         response = None
         while not response:
@@ -36,17 +36,21 @@ def main():
         if response == 'n':
           continue
 
+      # The fish shell files are a special case, due to sharing the config folder.
+      if f == 'config':
+        f = 'config/fish'
+
       # Delete the file if it's already in the destination to overwrite.
-      if ('.%s' % file) in dst:
-        print 'Removing: .%s' % file
+      if ('.%s' % f) in dst:
+        print 'Removing: .%s' % f
 
         try:
-          os.remove('%s/.%s' % (dst_dir, file))
+          os.remove('%s/.%s' % (dst_dir, f))
         except OSError:
-          shutil.rmtree('%s/.%s' % (dst_dir, file))
+          shutil.rmtree('%s/.%s' % (dst_dir, f))
 
-      print 'Creating: .%s' % file
-      os.symlink('%s/%s' % (src_dir, file), '%s/.%s' % (dst_dir, file))
+      print 'Creating: .%s' % f
+      os.symlink('%s/%s' % (src_dir, f), '%s/.%s' % (dst_dir, f))
 
   return
 
