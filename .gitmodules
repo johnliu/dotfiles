@@ -4,3 +4,6 @@
 [submodule "vundle"]
 	path = vim/bundle/vundle
 	url = https://github.com/gmarik/vundle.git
+[submodule "oh-my-fish"]
+	path = oh-my-fish
+	url = git://github.com/bpinto/oh-my-fish.git
