@@ -16,7 +16,7 @@ eval `gdircolors ~/.dircolors`
 
 plugins=(vi-mode brew cake coffee compleat dircycle encode64 gem 
          git gnu-utils heroku history-substring-search node npm osx
-         pip python ruby rails rails3 rvm sprunge zsh-syntax-highlighting)
+         pip python ruby rails rvm sprunge zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
