@@ -41,6 +41,7 @@ export VIRTUAL_ENV_DISABLE_PROMPT='true'
 
 # Aliases
 source ~/.aliases
+source ~/.aliases.zsh
 
 # Functions
 source ~/.functions

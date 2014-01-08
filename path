@@ -8,20 +8,16 @@ EOF`
 
 PATH=`sed -e '/^#/'d -e '/^$/'d << EOF | paste -s -d ":" -
 # Local Path
-/$HOME/Projects/bin
+$HOME/Projects/bin
 
 # Reorder for brew, etc.
 /usr/local/bin
 $PATH
 /usr/local/share/npm/bin
-/$HOME/.rvm/bin
+$HOME/.rvm/bin
 
 # Applications
 /Applications/MATLAB_R2012b.app/bin
-
-# Android Kernel
-/usr/local/opt/android-ndk/toolchains/arm-linux-androideabi-4.4.3/prebuilt/darwin-x86/bin
-/Users/johnliu/Projects/school/ece353/tools/tools
 EOF`
 
 export ANDROID_HOME=/usr/local/opt/android-sdk

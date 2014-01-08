@@ -21,11 +21,12 @@ fi
 # ====
 
 # Prompt
-source ~/.bash_prompt
+source ~/.prompt.bash
 
 # Aliases
 source ~/.aliases
-source ~/.bash_aliases
+source ~/.aliases.zsh
+source ~/.aliases.bash
 
 # Path
 source ~/.path
