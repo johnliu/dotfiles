@@ -10,6 +10,7 @@
 
 # IDE files
 .idea
+*.iml
 
 # OS X files
 .DS_Store
