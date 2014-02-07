@@ -18,6 +18,7 @@ $HOME/.rvm/bin
 
 # Applications
 /Applications/MATLAB_R2012b.app/bin
+/Applications/Postgres.app/Contents/MacOS/bin
 EOF`
 
 export ANDROID_HOME=/usr/local/opt/android-sdk

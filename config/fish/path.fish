@@ -27,6 +27,7 @@ $HOME/.rvm/bin
 
 # Applications
 /Applications/MATLAB_R2012b.app/bin
+/Applications/Postgres.app/Contents/MacOS/bin
 
 ")
 
