@@ -29,6 +29,9 @@ source `brew --prefix`/etc/profile.d/z.sh
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source $HOME/.rvm/scripts/rvm
 
+# autoenv
+[[ -e $(brew --prefix autoenv) ]] && source $(brew --prefix autoenv)/activate.sh
+
 # vi-mode Settings
 bindkey "^H" backward-delete-char
 bindkey "^?" backward-delete-char

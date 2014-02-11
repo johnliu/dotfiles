@@ -17,6 +17,11 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
   source $(brew --prefix)/etc/bash_completion
 fi
 
+# autoenv
+if [ -d $(brew --prefix autoenv) ]; then
+  source $(brew --prefix autoenv)/activate.sh
+fi
+
 # MAIN
 # ====
 
