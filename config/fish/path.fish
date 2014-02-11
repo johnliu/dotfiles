@@ -21,6 +21,7 @@ $HOME/Projects/bin
 
 # Reorder for brew, etc.
 /usr/local/bin
+/usr/local/sbin
 ") $PATH (flatten "
 /usr/local/share/npm/bin
 $HOME/.rvm/bin
