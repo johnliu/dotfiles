@@ -11,6 +11,7 @@ set -g NODE_PATH (flatten "
 
 # Default
 /usr/local/lib/node
+/usr/local/share/npm/lib/node_modules
 
 ")
 

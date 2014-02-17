@@ -4,6 +4,7 @@ NODE_PATH=`sed -e '/^#/'d -e '/^$/'d << EOF | paste -s -d ":" -
 
 # Default
 /usr/local/lib/node
+/usr/local/share/npm/lib/node_modules
 EOF`
 
 PATH=`sed -e '/^#/'d -e '/^$/'d << EOF | paste -s -d ":" -
