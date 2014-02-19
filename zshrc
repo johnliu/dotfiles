@@ -15,7 +15,7 @@ DISABLE_LS_COLORS='true'
 eval `gdircolors ~/.dircolors`
 
 plugins=(vi-mode brew cake coffee compleat dircycle encode64 gem 
-         git gnu-utils heroku history-substring-search node npm osx
+         git gnu-utils heroku history-substring-search node osx
          pip python ruby rails rvm sprunge zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
