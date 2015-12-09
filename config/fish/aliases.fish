@@ -19,10 +19,6 @@ alias v vim
 
 alias_if_file_exists psql "/Applications/Postgres.app/Contents/MacOS/bin/psql"
 
-alias_if_file_exists mathematica "/Applications/Mathematica.app/Contents/MacOS/MathKernel"
-
-alias_if_file_exists iphonesim "/Applications/Xcode.app/Contents/Applications/iPhone Simulator.app" "open '/Applications/Xcode.app/Contents/Applications/iPhone Simulator.app'"
-
 alias_if_exists ls gls "gls --color"
 
 alias_if_exists python ipython

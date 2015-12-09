@@ -1,10 +1,17 @@
 #!/usr/bin/python
 
 import os
+import subprocess
 import shutil
+
 
 # List of files to be ignored by the script.
 ignored_files = ['README.md', 'setup']
+
+
+def scripts():
+  subprocess.call('curl -fLo vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'.split())
+  subprocess.call('./osx')
 
 
 def main():
@@ -58,5 +65,7 @@ def main():
 
   return
 
+
 if __name__ == '__main__':
+  scripts()
   main()

@@ -1,70 +1,56 @@
 " John Liu's vimrc
 "
 " Some general instructions:
-" - Requires `vundle` (https://github.com/gmarik/vundle)
-" - Run `:BundleInstall` on first run.
+" - Requires `vim-plug` (https://github.com/junegunn/vim-plug)
+" - Run `:PlugInstall` on first run.
 
 " Critical Configurations
 " =======================
-
-" Vundle Setup Requirements
-set nocompatible
-filetype on
-filetype off
 
 " Leader Key
 let mapleader = ","
 
 
-" Vundle Bundles
-" ==============
+" Plugins
+" =======
 
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
-
-Bundle 'gmarik/vundle'
+call plug#begin('~/.vim/plugged')
 
 " Languages and Syntax
-Bundle 'othree/html5.vim'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'digitaltoad/vim-jade'
-Bundle 'groenewege/vim-less'
-Bundle 'vim-stylus'
-Bundle 'c.vim'
-Bundle 'derekwyatt/vim-scala'
-Bundle 'mattn/zencoding-vim'
-Bundle 'coot/atp_vim'
+Plug 'othree/html5.vim'
+Plug 'vim-stylus'
+Plug 'c.vim'
+Plug 'mattn/emmet-vim'
 
 " UI Upgrades
-Bundle 'majutsushi/tagbar'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
-Bundle 'sjl/gundo.vim'
-Bundle 'fholgado/minibufexpl.vim'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'kien/ctrlp.vim'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'nanotech/jellybeans.vim'
-Bundle 'godlygeek/csapprox'
+Plug 'majutsushi/tagbar'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'sjl/gundo.vim'
+Plug 'fholgado/minibufexpl.vim'
+Plug 'bling/vim-airline'
+Plug 'kien/ctrlp.vim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'nanotech/jellybeans.vim'
+Plug 'godlygeek/csapprox'
 
 " Editing Upgrades
-Bundle 'ack.vim'
-Bundle 'YankRing.vim'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'Raimondi/delimitMate'
-Bundle 'tpope/vim-surround'
-Bundle 'Shougo/neocomplcache'
-Bundle 'davidhalter/jedi-vim'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'simplyzhao/cscope_maps.vim'
-Bundle 'rizzatti/funcoo.vim'
-Bundle 'rizzatti/dash.vim'
-" Bundle 'terryma/vim-multiple-cursors'
+Plug 'ack.vim'
+Plug 'YankRing.vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'Raimondi/delimitMate'
+Plug 'tpope/vim-surround'
+Plug 'Shougo/neocomplcache'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'rizzatti/funcoo.vim'
+Plug 'rizzatti/dash.vim'
 
 " Misc Upgrades
-Bundle 'tpope/vim-fugitive'
-Bundle 'mattn/gist-vim'
-Bundle 'mattn/webapi-vim'
+Plug 'tpope/vim-fugitive'
+Plug 'mattn/gist-vim'
+Plug 'mattn/webapi-vim'
+
+call plug#end()
 
 " kien/ctrlp.vim
 set wildignore+=*.o,*.pyc,.git,bin,node_modules,venv
@@ -81,6 +67,11 @@ let g:ctrlp_buftag_types = {
       \ 'objc'       : '--language-force=objc --objc-types=mpci',
       \ }
 
+" ack.vim
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
 " YankRing.vim
 let g:yankring_history_file = '.yankring_history'
 
@@ -88,14 +79,14 @@ let g:yankring_history_file = '.yankring_history'
 let g:NERDSpaceDelims = 1
 
 " scrooloose/syntastic
-let g:syntastic_quiet_warnings = 1
+let g:syntastic_quiet_messages = { 'level': 'warnings' }
 let g:syntastic_check_on_open = 1
 let g:syntastic_error_symbol = '✗'
 let g:syntastic_warning_symbol = '⚠'
 let g:syntastic_auto_loc_list = 0
 
-" Lokaltog/vim-powerline
-let g:Powerline_symbols = 'fancy'
+" bling/vim-airline
+let g:airline_powerline_fonts = 1
 
 " fholgado/minibufexpl.vim
 let g:miniBufExplHideWhenDiff = 1
@@ -109,19 +100,20 @@ let g:gist_detect_filetype = 1
 let g:gist_show_privates = 1
 let g:gist_post_private = 1
 
-" mattn/zencoding-vim
-let g:user_zen_leader_key = '<c-x>'
+" mattn/emmet-vim
+let g:user_emmet_leader_key = '<c-x>'
 
 " altercation/vim-colors-solarized
+set background=dark
 let g:solarized_termtrans = 1
 let g:solarized_termcolors = 256
 let g:solarized_constrast = "normal"
 let g:solarized_visibility = "normal"
-" colorscheme solarized
+colorscheme solarized
 
 " nanotech/jellybeans.vim
 let g:jellybeans_use_lowcolor_black = 0
-colorscheme jellybeans
+" colorscheme jellybeans
 
 " Set font for GUI vim.
 if has("gui_running")
@@ -132,13 +124,6 @@ if has("gui_running")
   set guioptions-=l
   set guioptions-=L
 endif
-
-" dhalter/jedi-vim
-let g:jedi#auto_initialization = 1
-let g:jedi#popup_on_dot = 0
-let g:jedi#use_tabs_not_buffers = 0
-let g:jedi#show_function_definition = 0
-autocmd FileType python let b:did_ftplugin = 1
 
 " Shougo/neocomplcache
 let g:neocomplcache_enable_at_startup = 1
@@ -157,7 +142,6 @@ endif
 if !exists('g:neocomplcache_omni_functions')
   let g:neocomplcache_omni_functions = {}
 endif
-let g:neocomplcache_omni_functions['python'] = 'jedi#complete'
 
 if !exists('g:neocomplcache_disabled_sources_list')
   let g:neocomplcache_disabled_sources_list = {}
@@ -196,8 +180,8 @@ nnoremap <silent> <leader>n :NERDTreeToggle<cr>
 " majutsushi/tagbar
 nnoremap <silent> <leader>m :TagbarToggle<cr>
 
-" mattn/zencoding-vim
-" <c-x> toggles zencoding (mapped using zencoding's global variable)
+" mattn/emmet-vim
+" <c-x> toggles emmet (mapped using emmet's global variable)
 
 " Shougo/neocomplcache
 inoremap <expr> <tab> CompleteCommonStringOrFinish("\<tab>")

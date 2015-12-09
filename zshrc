@@ -14,23 +14,39 @@ export EDITOR='vim'
 DISABLE_LS_COLORS='true'
 eval `gdircolors ~/.dircolors`
 
-plugins=(vi-mode brew cake coffee compleat dircycle encode64 gem 
-         git gnu-utils heroku history-substring-search node osx
-         pip python ruby rails rvm sprunge zsh-syntax-highlighting)
+plugins=(
+  vi-mode
+  brew
+  compleat
+  dircycle
+  encode64
+  git
+  gitfast
+  gnu-utils
+  history-substring-search
+  httpie
+  jira
+  json-tools
+  node
+  osx
+  pip
+  python
+  ruby
+)
 
 source $ZSH/oh-my-zsh.sh
 
 # PLUGIN SETTINGS
 # ===============
 
-# Z
-source `brew --prefix`/etc/profile.d/z.sh
+# fasd
+eval "$(fasd --init auto)"
 
-# RVM
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# rvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source $HOME/.rvm/scripts/rvm
-
-# autoenv
-[[ -e $(brew --prefix autoenv) ]] && source $(brew --prefix autoenv)/activate.sh
 
 # vi-mode Settings
 bindkey "^H" backward-delete-char
@@ -51,3 +67,4 @@ source ~/.functions
 
 # Path
 source ~/.path
+

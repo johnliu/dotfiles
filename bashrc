@@ -1,25 +1,18 @@
 # PLUGINS
 # =======
 
-# Bashmarks
-if [ -f ~/Projects/bin/bashmarks.sh ]; then
-  source ~/Projects/bin/bashmarks.sh
-fi
+# fasd
+eval "$(fasd --init auto)"
 
-# RVM
+# fzf
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# rvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source $HOME/.rvm/scripts/rvm
-
-# Z
-source `brew --prefix`/etc/profile.d/z.sh
 
 # Bash Completion
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   source $(brew --prefix)/etc/bash_completion
-fi
-
-# autoenv
-if [ -d $(brew --prefix autoenv) ]; then
-  source $(brew --prefix autoenv)/activate.sh
 fi
 
 # MAIN
@@ -47,3 +40,4 @@ shopt -s histappend
 
 # Autocorrect typos in path names when using 'cd'
 shopt -s cdspell
+
