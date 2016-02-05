@@ -10,7 +10,7 @@
   excludesfile = /Users/johnliu/.gitignore
   editor = /usr/bin/vim
 [push]
-  default = matching
+  default = current
 
 [diff]
   tool = vimdiff
@@ -47,3 +47,7 @@
   lol = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   list = show --pretty="format:" --name-only
   current = rev-parse --abbrev-ref HEAD
+[pull]
+  default = current
+[help]
+  autocorrect = 1
