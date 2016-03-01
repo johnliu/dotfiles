@@ -23,5 +23,5 @@ fi
 
 # hub
 if type "hub" &> /dev/null; then
-  alias github="hub"
+  alias git="hub"
 fi
