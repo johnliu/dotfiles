@@ -39,6 +39,9 @@ source $ZSH/oh-my-zsh.sh
 # PLUGIN SETTINGS
 # ===============
 
+# python byte files
+export PYTHONDONTWRITEBYTECODE=1
+
 # fasd
 eval "$(fasd --init auto)"
 

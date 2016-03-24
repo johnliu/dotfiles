@@ -1,6 +1,9 @@
 # PLUGINS
 # =======
 
+# python byte files
+export PYTHONDONTWRITEBYTECODE=1
+
 # fasd
 eval "$(fasd --init auto)"
 
