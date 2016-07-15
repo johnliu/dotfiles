@@ -58,6 +58,11 @@ bindkey "^?" backward-delete-char
 # Disable virtualenv prompt
 export VIRTUAL_ENV_DISABLE_PROMPT='true'
 
+# Shell integration
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+iterm2_before_cmd_executes() {
+}
+
 # MAIN
 # =====
 
